@@ -1,0 +1,1123 @@
+{
+  "id_test": "TEST_D",
+  "nombre_test": "Reglas No Escritas (Códigos de Barrio)",
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "texto": "El asado quedó seco como suela de zapato y la provoleta está fría. ¿Qué le decís al asador?",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Un manjar fiera, un aplauso para el asador.\" (Masticando 40 veces el mismo pedazo).",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Che, capaz le faltó un minutito menos de fuego, pero está comible, tranqui.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Mirá, yo te quiero mucho, pero esto es incomible. Pedite unas empanadas y alejáte de la parrilla.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Le tirás la carne al perro por debajo de la mesa y te llenás a base de pan y ensalada rusa.",
+          "puntos": 2,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "\"Che, a mí me gusta así bien sequito, crocante, es el mejor asado que comí.\"",
+          "puntos": 7,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 2,
+      "texto": "Te pasan un mate, lo tomás y le decís \"Gracias\" al cebador. En la próxima ronda, te saltea. ¿Qué hacés?",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"¡Ehhh! ¡Me salteaste! El 'gracias' fue de educación, no de cierre, no seas resentido.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Te callás la boca, asumís tu error por no conocer los códigos del mate y mirás cómo toman los demás.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Agarrás la bombilla en la próxima ronda, lo revolvés todo y decís: \"Uy, se tapó\".",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Y... pasa que a veces uno dice gracias sin pensar, qué sé yo, ya fue.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Sacás tu propio mate del bolso, te cebás solo y no le convidás a nadie.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 3,
+      "texto": "Te invitan a cenar, sobró comida y la madre de tu amigo te manda las sobras en un Tupperware nuevito. ¿Cómo lo devolvés?",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Limpio, seco y con un paquete de galletitas o un budín adentro. El código sagrado.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Lo devolvés vacío y un poco engrasado en los bordes.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"¿Qué tupper? Ah, no sé, lo debo haber perdido en la mudanza.\" (Te lo robaste).",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Ay, me re olvidé de traerlo. Te lo traigo la próxima sin falta.\" (Pateando la deuda).",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Se lo mandás por una app de envíos para no tener que cruzarte a la madre y agradecerle de nuevo.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 4,
+      "texto": "Queda una sola porción de pizza en la caja. Hay cuatro personas con hambre y un silencio sepulcral.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Preguntás tres veces: \"¿Nadie la quiere? ¿Seguro? Bueno, me sacrifico\".",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Che, ¿la dividimos en cuatro pedacitos así comemos todos?\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Te la comés de un bocado mientras los demás miran el celular, sin preguntar nada.",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Le decís a otro: \"Cométela vos que estás más flaco\", para parecer generoso pero obligarlo a engordar.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Ignorás la pizza hasta que se enfría, se pone dura y termina en la basura al día siguiente.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 5,
+      "texto": "Tenés un turno o juntada a las 21:00 hs en una casa. ¿A qué hora tocás el timbre?",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "A las 21:00 hs en punto. Disfrutás ver al anfitrión abriendo la puerta en toalla y desesperado.",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "A las 21:20 hs. El colchón de respeto para que el dueño de casa respire.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "A las 22:30 hs, con la excusa de que \"no encontrabas lugar para estacionar\".",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Y... yo siempre trato de llegar a horario, pero bueno, el tráfico es un tema, ¿viste?\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Caés al día siguiente a buscar las sobras del asado sin haber avisado que no ibas.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 6,
+      "texto": "Estás en la ducha y te mandan un WhatsApp: \"¿Por dónde andás?\".",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Estoy a 5 minutos, voy buscando lugar.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Recién me meto a bañar, calculale 40 minutos, si quieren vayan pidiendo.\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Ya salí.\" (Mentís, pero te vestís en 30 segundos sin secarte para no quedar tan mal).",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Clavás el visto, te tomás tu tiempo, y respondés cuando estás en la puerta del lugar.",
+          "puntos": 2,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "\"Estoy trabado en un embotellamiento de la san puta, arranquen sin mí.\"",
+          "puntos": 7,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 7,
+      "texto": "Llega la cuenta del restaurante. El mozo la deja en el medio de la mesa.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Manoteás el ticket, sacás la calculadora y dividís cobrándole los 30 pesos extra al que pidió soda.",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Tirás la tarjeta rápido y decís: \"Dejá, invito yo\". (Sabiendo que todos van a decir que no y pagan a medias).",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Bueno, ¿cómo hacemos? Yo comí ensalada nomás, pero como quieran, ¿dividimos igual?\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Te levantás estratégicamente para ir al baño justo 30 segundos antes de que llegue el mozo.",
+          "puntos": 2,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Sugerís dividir en partes iguales para no complicar al mozo, transferís tu parte al toque y listo.",
+          "puntos": 0,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 8,
+      "texto": "El kiosquero te dice: \"No tengo 50 pesos de vuelto, ¿te doy un par de caramelos?\".",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Maestro, los caramelos no me pagan las expensas. Dame mis 50 pesos o dejá, no llevo nada.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Bueno, dale, gracias.\" (Y te vas masticando la inflación).",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Y... es un garrón porque la plata no vale nada, pero bueno, dámelos, qué le vamos a hacer.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Agarrás los caramelos y al día siguiente intentás pagarle el pan con esos mismos caramelos.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Le dejás el vuelto a cuenta y no volvés al kiosco por seis meses hasta olvidarte.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 9,
+      "texto": "Pedís 1 kilo de helado para compartir con tres personas más. Te toca elegir a vos los gustos.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Dulce de leche granizado, Chocolate y Frutilla. Cero riesgo, democracia pura.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Menta granizada, Limón al agua y Pistacho.",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Elijan ustedes, a mí me da lo mismo cualquier cosa.\" (Y después criticás lo que eligieron).",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Pedís todo de Dulce de Leche, pero tres variantes distintas para no ceder ni un centímetro de tus gustos.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Te pedís un cuarto para vos solo y dejás que los otros tres se maten eligiendo los tres cuartos restantes.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 10,
+      "texto": "Vas de copiloto en un viaje a la Costa (5 horas). Tu rol es:",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Cebar mates a temperatura perfecta, vigilar el GPS y darle charla al conductor para que no se duerma.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Reclinar el asiento a los 10 minutos de salir, ponerte un antifaz y roncar hasta el cartel de \"Bienvenidos\".",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Criticar la forma de manejar del conductor, avisarle de cada pozo y gritarle \"¡Cuidado el camión!\" a cada rato.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Yo te cebo un par de mates si querés, pero después pongo mi playlist así nos relajamos todos.\" (Ponés trap depresivo).",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Te ponés los auriculares y mirás por la ventana ignorando al conductor como si fueras en un Uber.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 11,
+      "texto": "La regla en la previa es 'Traé lo que tomes'. Vos caés con una birra barata de litro.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Te tomás con orgullo tu birra tibia sin mirar la heladera de los demás.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Escondés tu birra atrás de todo, esperás a que alguien prepare un Fernet premium y decís 'Che, ¿me convidás?'.",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Yo traje esto para compartir eh, si alguien quiere agarre.\" (Sabiendo que nadie va a querer tu veneno).",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Le criticás a los demás que gasten tanta plata en alcohol caro \"habiendo tanta pobreza en el país\".",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Te quedás tomando agua de la canilla toda la noche para no gastar ni deberle nada a nadie.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 12,
+      "texto": "Prestan un encendedor en la ronda. A los 5 minutos, desaparece.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Frenás la música: \"Bueno, nadie sale de esta casa hasta que aparezca mi encendedor verde, revísense ya\".",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Lo das por perdido, es el ciclo sin fin de la vida del fumador.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Uh, alguien se me quedó el encendedor... bueno, no importa, ya va a aparecer.\" (Y sufrís en silencio).",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Para compensar la pérdida, te robás estratégicamente tres encendedores distintos antes de irte de la fiesta.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Pedís fuego a desconocidos el resto de la noche sin molestar a tus amigos.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 13,
+      "texto": "Son las 4 AM en el boliche, estás destruido y te querés ir a dormir.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Buscás a tus amigos, saludás a todos con un abrazo y te despedís dignamente.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Aplicás la \"Bomba de Humo\". Te vas sin avisar, apagás el celular y que piensen que te secuestraron.",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Che, yo me voy yendo, pero si quieren quédense, no pasa nada, posta.\" (Con cara de perro abandonado).",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Mandás un WhatsApp desde el taxi: \"Me fui, avisen cuando lleguen\".",
+          "puntos": 2,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Te enojás con el grupo acusándolos de que \"nunca te hacen caso cuando querés hacer algo\" y te vas ofendido.",
+          "puntos": 7,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 14,
+      "texto": "Tu amigo manda un meme o video que ofende explícitamente a otro integrante del grupo que está presente.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Che boludo, te fuiste al pasto, borrá eso que no da.\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Ponés \"Jajajaja\" para no quedar como un amargo, aunque sepas que está destruyendo al otro.",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Le reenviás el meme por privado a otra gente del grupo para reírte a sus espaldas.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Te guardás la captura de pantalla por si algún día necesitás chantajear al que mandó el meme.",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Silenciás el grupo por un año y medio.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 15,
+      "texto": "Estás cenando con un amigo y tiene un plato de papas fritas impecable. Vos no pediste papas.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Le preguntás: \"Che, ¿te puedo robar una?\" antes de acercar la mano.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Esperás a que vaya al baño y le comés un cuarto del plato disimulando los huecos.",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Uy, qué buena pinta tienen esas papas... pero no pasa nada, disfrutalas.\" (Mendigando con culpa).",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Le pinchás tres papas con tu tenedor usado directamente de su plato sin preguntar, mirándolo a los ojos.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Pagás una porción extra de papas para vos solo y no le convidás cuando a él se le terminan.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 16,
+      "texto": "Viene el colectivo a la noche en una calle oscura. ¿Cómo lo parás?",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Levantás la mano clara y con tiempo, buscando contacto visual con el chofer.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Hacés una seña tímida a último segundo, el bondi pasa de largo y decís: \"Y bueno, el universo no quería\".",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Te parás casi en el medio de la calle y lo mirás con cara de psicópata para obligarlo a frenar o pisarte.",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Si no para, le tirás una piedra o lo puteás con todo tu árbol genealógico mientras se aleja.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Te escondés atrás del poste de luz y dejás que el que está al lado tuyo haga la seña por vos.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 17,
+      "texto": "El 'Trapito' (cuidacoches) te pide plata por adelantado al estacionar.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Te pago a la vuelta maestro, cuando me vaya.\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Le pagás todo sin chistar por terror a que te raye el auto.",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Le decís que no tenés efectivo, le dejás el auto y te pasás toda la noche sufriendo pensando que te lo rompió.",
+          "puntos": 2,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Lo mirás de arriba a abajo con desprecio, le decís \"La calle es pública\" y te vas a estacionar a 10 cuadras.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Le decís \"A la vuelta te doy flaco\", pero cuando salís te subís rápido, arrancás arando y te fugás sin pagarle.",
+          "puntos": 10,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 18,
+      "texto": "Tu mamá/abuela preparó milanesas y un amigo tuyo dice frente a ella: \"Están ricas, pero las de mi vieja son mejores\".",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Eh, bajá un cambio, las de mi vieja son patrimonio nacional, respetá.\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Lo mirás con odio, lo echás de tu casa mentalmente y le servís las peores porciones de ahí en adelante.",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Y... cada mamá tiene su receta, es cuestión de gustos, todas son ricas.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Te reís y lo exponés: \"Uy ma, escuchá lo que dijo, a este no lo invites más\".",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Fingís no haber escuchado y seguís masticando como si no hubiera pasado nada.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 19,
+      "texto": "Regalo del trabajo o grupo para alguien. Vos no pusiste un peso, pero pasan la tarjeta de firmas.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "No firmás. No pagaste, no existís. Ética pura.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Firmás con letras enormes en el centro \"¡Con todo mi amor, sos el mejor!\" robando cámara.",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Ponés un \"Feliz cumple\" chiquitito en una esquina con lapicera que casi no se nota para zafar.",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Tachás el nombre de otro y ponés el tuyo arriba en chiste (pero no tan en chiste).",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Te comés la mitad de la torta de cumpleaños de ese compañero sin haber firmado la tarjeta ni puesto plata.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 20,
+      "texto": "Alguien del grupo \"se olvida\" de avisar que llegó a su casa a las 4 AM. Al otro día:",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Che boludo, me dejaste preocupado, avisá la próxima.\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"No pasa nada, yo también colgué y me dormí al final, cero estrés.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Le mandás audios insultándolo a las 5 AM acusándolo de no tener empatía por la salud mental ajena.",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Te vengás: la próxima vez que te vas vos, le apagás el celular por 12 horas para que sufra lo mismo.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Ya sabías que no iba a avisar, te fuiste a dormir y no te importó en lo más mínimo.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 21,
+      "texto": "Descubrís que el amigo que siempre junta la plata del asado ('yo compro y después dividimos') lleva tres años inflando los tickets un 20% para quedarse con un vuelto para él.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Qué maestro, el impuesto al organizador. Yo haría lo mismo, el que labura cobra, corta la bocha.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Le tirás el ticket verdadero en la cara en el medio de la cena frente a todos y lo humillás tratándolo de estafador y rata.",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Y... está mal, pero convengamos que él siempre pone la casa y hace las compras, es como una propina encubierta.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Te alejás del grupo en silencio y empezás a decir que \"no tenés plata\" cada vez que organizan algo para no ir más.",
+          "puntos": 2,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Lo agarrás a solas y le decís: \"Sos un atrevido, o dejás de robar o paso yo a hacer las compras desde hoy, y devolvé algo de la que te llevaste\".",
+          "puntos": 0,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 22,
+      "texto": "A un integrante del grupo se le escapa, por error, reenviar al grupo un audio DESTROZANDO y burlándose de otro integrante que también está en el chat.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Clavás un \"Uy...\", bloqueás el celular y te vas a mirar la pared, rezando para que nadie te meta en el medio del tiroteo.",
+          "puntos": 2,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Escribís rápido: \"Jajaja se nota que era en joda, qué tonto sos, se equivocó de chat\".",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Agarrás los pochoclos y ponés en el grupo: \"Bueno, por fin alguien lo dijo en voz alta. A ver cómo te defendés ahora\".",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Le hablás por privado al agredido para echar más leña al fuego: \"¿Viste lo que piensa de vos? Y eso que no escuchaste lo que dijo ayer\".",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Escribís en el grupo: \"Bueno, te equivocaste feo, ahora hacete cargo y pedí perdón como corresponde\".",
+          "puntos": 0,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 23,
+      "texto": "Vas caminando por el centro al mediodía y ves, sin lugar a dudas, a la pareja de tu mejor amigo chapando apasionadamente con otra persona en la puerta de un hotel.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Le sacás foto, armás un PDF con pruebas geolocalizadas, lo citás en un bar y le destrozás el corazón con la evidencia en mano.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Yo no me meto en parejas ajenas, ojos que no ven, corazón que no siente.\" Y te llevás el secreto a la tumba.",
+          "puntos": 2,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Le mandás un mensaje anónimo de Instagram a tu amigo diciéndole \"Cuidate los cuernos\", pero sin dar la cara por cobarde.",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Encarás a la pareja infiel ahí mismo: \"O le decís vos en 24 horas, o le digo yo, y te aviso que yo lo voy a disfrutar mucho más\".",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Vas a buscar a tu amigo, le tirás un millón de indirectas de que su pareja \"es rara\", esperando que él se dé cuenta solo para no ensuciarte las manos.",
+          "puntos": 7,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 24,
+      "texto": "Un amigo del grupo cae a la previa agarrado de la mano con la ex pareja de otro integrante del mismo grupo (con la que cortó hace solo tres meses).",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Qué lindo que el amor triunfe y se mantenga dentro del mismo círculo energético, el universo los unió, cero rencores chicos.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Le hacés la cruz. Ni lo saludás. Para vos acaba de romper la regla número 1 de la Constitución del Barrio. Está muerto.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Y... es un montón, pero bueno, ya son grandes, qué sé yo, hay que ver qué pasó entre ellos.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Buscás al amigo traicionado para decirle 'Yo que vos le parto una botella en la cabeza, no podés dejar que te humillen así'.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Te escondés en el balcón toda la noche para no tener que saludar a la nueva parejita ni consolar al cornudo histórico.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 25,
+      "texto": "Es tu cumpleaños, la fiesta está a pleno. Vas a tu baño a buscar papel higiénico y encontrás a tu mejor amigo teniendo relaciones sexuales contra el lavamanos con... ¡tu propio hermano/a!",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Pegás un grito de asco, cerrás la puerta con fuerza y al otro día los obligás a comprarte un lavamanos nuevo y disculparse de rodillas.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Cerrás la puerta rápido, te hacés el boludo, y a partir de ese día los mirás con cara de morbo en las cenas familiares tirando indirectas súper incómodas.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Prendés la luz, te cruzás de brazos y decís: \"Terminen, laven todo con lavandina y cuando salgan, charlamos de lo basuras que son los dos\".",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Y... entre el alcohol y la fiesta, a veces las hormonas juegan malas pasadas, mejor me olvido que vi esto y que fluya.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Te genera tanto trauma psiquiátrico que te vas de tu propia fiesta, te mudás de provincia y bloqueás a los dos por degenerados.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 26,
+      "texto": "Pusiste las manos en el fuego para hacer entrar a un amigo a trabajar en tu misma empresa. A las dos semanas, empieza a llegar tarde, no hace nada y, para colmo, habla mal del jefe y te hace quedar como un idiota por haberlo recomendado.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Le armás la cama. Empezás a mandarle capturas de sus errores al jefe de forma anónima o sutil para que lo echen sin que sepa que fuiste vos, limpiando tu reputación.",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Te hacés el que no lo conocés. Si alguien en la oficina te pregunta por él, decís \"Ah, era el primo de un conocido, ni sabía que era tan vago\".",
+          "puntos": 2,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Lo amenazás: \"O empezás a hacer tu laburo, o te juro que hago mi trabajo y el tuyo, pero te hago la vida imposible hasta que renuncies llorando\".",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Lo encarás de frente: \"Sos un desagradecido. Te ponés las pilas hoy mismo o voy yo personalmente a decirle a Recursos Humanos que me equivoqué con vos y que te saquen\".",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Le tirás indirectas suaves: \"Che, fijate que el jefe te miró re mal hoy... tratá de llegar a horario mañana así no me quemás a mí, ¿dale?\".",
+          "puntos": 5,
+          "es_tibia": true
+        }
+      ]
+    },
+    {
+      "id_pregunta": 27,
+      "texto": "El grupo organiza un regalo y una fiesta sorpresa para vos. Te enterás después (por accidente) que un integrante, que tiene muchísima plata, NO puso un solo peso. Pero a la hora de soplar las velas se paró adelante y te dijo en voz alta: 'Te compramos esto con mucho esfuerzo hermano'.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "En la próxima juntada grupal, llevás un regalo envuelto para él. Adentro hay un desodorante de ambiente usado y un cartel que dice: \"Para compensar lo que pusiste en mi cumple\".",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Sonreís y decís: \"Ayy gracias, y a vos también fulanito, aunque tu presencia es el mejor regalo jajaja\".",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "C",
+          "texto": "En el medio del festejo, adelante de todos, le decís: \"Qué raro que digas 'compramos' si tu transferencia nunca llegó, caradura, corréte para atrás de la foto\".",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Lo agarrás a solas y le decís: \"Sos un miserable. No por la plata, sino por robarte el crédito del esfuerzo de los chicos frente a mi cara\".",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Te tragás la bronca, no decís absolutamente nada, pero dejás de contestarle los mensajes por el resto del año.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 28,
+      "texto": "Ves el celular desbloqueado de tu amigo de casualidad y descubrís que él es el administrador de una cuenta falsa (troll/finsta) que se dedica a burlarse y bardear anónimamente a otra persona de su mismo grupo de amigos.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Le robás el celular un segundo, entrás al grupo principal de WhatsApp, mandás las capturas desde SU número y te sentás con pochoclos a ver cómo arde Roma.",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Le sacás foto a la pantalla con tu celu y lo usás para chantajearlo: \"O me pagás las salidas de acá a fin de año, o le muestro esto a Fulanito\".",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Le decís a solas: \"Sos un enfermo mental. O le decís vos la verdad, le pedís perdón y borrás la cuenta hoy, o mañana se lo cuento yo\".",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Le decís: \"Che, me pareció ver algo raro en tu celu, alto mambo... pero bueno, no me quiero meter, cada uno con lo suyo\".",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Quedás traumado pensando que todo el mundo es psicópata, no decís nada y te empezás a alejar del grupo para siempre.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 29,
+      "texto": "Tu amigo te pide ayuda para mudarse. Te rompés la columna bajando una heladera y un sillón por tres pisos de escalera. Al terminar, la ley sagrada exige pagar con pizza y cerveza. Pero él te da un vaso de agua y dice: 'No pedí nada porque estoy haciendo ayuno intermitente'.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Agarrás la caja más cara (la de la Play o la notebook), te parás al lado de la ventana y decís: \"O aparecen dos docenas de empanadas en 15 minutos o esto aprende a volar\".",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Le decís: \"Hermano, el ayuno hacelo vos. El contrato latinoamericano de mudanzas exige carbohidratos y alcohol. Pedime algo ya o me llevo tu silla de la compu\".",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Ah, tranqui, te re entiendo... el ayuno es re sano para limpiar el organismo. Yo me como alguito en casa, no te hagas drama.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Te vas en silencio, pero antes de salir le escondés el control remoto de la tele y las llaves de los cajones en lugares imposibles de encontrar.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Te vas sin decir una palabra, pasás por el auto-mac, te comprás un combo gigante y comés llorando de fatiga en el volante.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 30,
+      "texto": "Un amigo te pide las llaves de tu departamento por una tarde porque 'tiene una cita re importante y su casa está pintándose'. Llegás antes por un imprevisto. Abrís la puerta y los encontrás en el sillón, rodeados de juguetes, cremas, haciendo de todo... y te das cuenta de que su 'cita' es el PADRE/MADRE de OTRO integrante íntimo de tu grupo de amigos.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Te sentás en la silla del comedor, te servís un vaso de algo, sacás el celular para grabar y decís: \"Sigan, sigan, que a Fulanito le va a encantar ver el documental de sus papis en mi sillón\".",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Pegás un grito: \"Tienen 3 minutos para vestirse y desaparecer. Y vos, mañana me comprás un sillón nuevo o le cuento a todo el grupo a quién te estás comiendo\".",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Quedás mudo, cerrás la puerta despacito, te vas al bar de la esquina. Pero a partir de ahí, cada vez que el amigo cornudo nombra a su familia, vos te reís y le guiñás un ojo de forma enferma.",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Los echás a los gritos, pero te guardás un objeto personal del padre/madre. Después lo usás para chantajear al infractor de por vida.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Entrás en pánico catatónico. Cerrás la puerta, te vas a vivir a otro barrio, tirás el sillón a la calle y bloqueás a todos porque el nivel de incesto barrial te destruyó la psiquis.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    }
+  ],
+  "perfiles_resultado": [
+    {
+      "rango_min": 241,
+      "rango_max": 300,
+      "titulo": "El Enemigo Público N°1",
+      "sello": "PSICÓPATA SOCIAL",
+      "descripcion": "Las reglas de convivencia humana son un chiste para vos. No respetás la porción ajena, te robás encendedores por deporte y cobrarías deudas con maldad. Para vos, la amistad no es un vínculo, es un buffet libre donde los demás son la comida."
+    },
+    {
+      "rango_min": 171,
+      "rango_max": 240,
+      "titulo": "El Chanta Vengativo",
+      "sello": "CHANTAJE EMOCIONAL",
+      "descripcion": "Sos el típico ventajero rencoroso. Tu especialidad es la venganza diferida: si alguien te ofende hoy, le vas a esconder el control remoto o esperar a su cumpleaños para arruinarle la noche. Tu lealtad es un contrato con cláusulas abusivas."
+    },
+    {
+      "rango_min": 111,
+      "rango_max": 170,
+      "titulo": "La Suiza del Subdesarrollo",
+      "sello": "TIBIO CRÓNICO",
+      "descripcion": "Sos el rey de 'La Trampa Tibia'. Tu miedo al conflicto te volvió un panqueque moral. Justificás cualquier aberración o estafa con frases como 'Y bueno, es un tema complejo'. Tu cobardía te hace cómplice de las peores personas del grupo."
+    },
+    {
+      "rango_min": 31,
+      "rango_max": 110,
+      "titulo": "El Holograma Urbano",
+      "sello": "FANTASMA SOCIAL",
+      "descripcion": "Básicamente sos un ente. No te importa nada. Si alguien te roba, te vas a dormir; si tus amigos se traicionan entre sí, mirás el techo. Tu estrategia de supervivencia es la amnesia selectiva y la bomba de humo."
+    },
+    {
+      "rango_min": 0,
+      "rango_max": 30,
+      "titulo": "El Guardián del Código Barrial",
+      "sello": "CIUDADANO EJEMPLAR",
+      "descripcion": "Sos la última reserva moral de la República. Devolvés los tuppers, marcás los límites sin ser un dictador y sos capaz de decirle la peor verdad a un amigo por lealtad. Sin vos, este grupo ya estaría en Crónica TV."
+    }
+  ]
+}

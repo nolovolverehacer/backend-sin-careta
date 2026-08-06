@@ -1,0 +1,1122 @@
+{
+  "id_test": "TEST_C",
+  "nombre_test": "El Buda con Puñal (Agresión Pasiva)",
+  "preguntas": [
+    {
+      "id_pregunta": 1,
+      "texto": "Un amigo bajó de peso o se arregló mucho para una fiesta y busca que el grupo se lo note. ¿Cuál es tu comentario?",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Te queda divino ese pantalón, disimula re bien lo que subiste el año pasado. ¡Me encanta que por fin te animes a usarlo!\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Qué fachero/a que estás amigo/a, la verdad que rompés la noche.\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Sí, te queda lindo. Che, ¿alguien sabe si va a llover a la noche?\"",
+          "puntos": 2,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Te queda re bien gorda/o. Te felicito, la verdad que con el poquito tiempo que tenés para cuidarte es un logro.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "E",
+          "texto": "\"Te queda genial, lástima que te acordaste de vestirte bien justo cuando venimos a un bodegón grasiento.\"",
+          "puntos": 7,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 2,
+      "texto": "Un amigo te invita a cenar a su departamento nuevo. Se nota que gastó sus ahorros y estuvo 4 horas cocinando para recibirte.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"¡Amo la vibra de la casa! Re bohemia, re austera... se nota que supiste optimizar los pocos metros cuadrados que tenés.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Está hermoso el lugar y la comida riquísima, ¡felicitaciones por el esfuerzo!\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Está lindo. Acordate de que la otra vez yo te invité al restaurante de sushi carísimo para tu cumple, así que ya estamos a mano.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Está re lindo todo. Yo le pondría unas cortinas más tupidas para que no se vea la humedad enfrente, pero es un detalle.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Comés la comida en silencio, decís 'Rico' cuando te preguntan y no volvés a mencionar la casa en toda la noche.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 3,
+      "texto": "Tu amigo publica en redes sociales un logro profesional o académico groso tras años de remarla.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Le comentás públicamente: \"¡¡Orgulloso/a de vos!! Al final todas las veces que quisiste tirar la toalla dieron fruto, gran guerrero de las derrotas\".",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Le ponés un 'Me gusta' aséptico y pasás a la siguiente historia sin decir nada.",
+          "puntos": 2,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Le mandás un mensaje privado sincero: \"¡Felicidades loco, te lo súper merecés, a festejar!\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Le comentás '¡Felicitaciones!' pero por privado le recordás: \"Che, acordate que yo te pasé el contacto de esa empresa eh jajaja\".",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Le comentás \"¡Felicidades gordo! ¡Qué bueno que por fin se te dio una buena entre tantas pálidas!\"",
+          "puntos": 5,
+          "es_tibia": true
+        }
+      ]
+    },
+    {
+      "id_pregunta": 4,
+      "texto": "Le hacés un favor enorme a un amigo (ej: llevarlo al aeropuerto a las 5 AM). Al mes, le pedís un favor diminuto y él duda tres segundos.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Tranqui, no pasa nada. Ya me quedó claro qué lugar ocupo en tu lista de prioridades y cuánto valen mis 5 AM de sueño.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Bueno, de última le digo a otro, no hay drama.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Escuchame una cosa: yo te llevé al aeropuerto perdiendo nafta y horas de sueño. Me hacés esto o se pudre todo.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Soltás un 'Ah, mirá vos' helado, cambiás de tema y le congelás el diálogo por dos semanas sin dar explicaciones.",
+          "puntos": 2,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "\"Che, si se te complica posta avisame y busco otra opción, no te hagas drama.\"",
+          "puntos": 0,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 5,
+      "texto": "Estás en una reunión social y tu amigo comete un pequeño error de datos mientras le habla a alguien que le gusta o a un superior.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Lo corregís en frente de todos con sonrisa maternal: \"Ay mi amor, no mientas... te confundiste de año pero igual te queremos\".",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Dejás que hable y, si es necesario, le decís en privado a solas: \"Ojo que tiraste mal ese dato recién\".",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Interrumpís con cara de sorpresa: \"¿Posta dijiste eso? Nooo, nada que ver jajaja, ¿de dónde sacaste esa información?\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Te reís con saña en silencio para tus adentros, disfrutando de cómo se hunde solo sin mover un dedo.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Te ponés a mirar el celular fingiendo amnesia y sordera selectiva para no involucrarte.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 6,
+      "texto": "Un amigo te contó en secreto una inseguridad profunda. Días después tienen un debate de opiniones en el grupo.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Tirás una indirecta 'inocente': \"Bueno, pasa que algunos canalizan su miedo a quedarse solos atacando al resto, ¿no?\".",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Discutís sobre el tema puntual de la charla sin tocar jamás sus secretos o vulnerabilidades personales.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Soltás un \"Y sí, con la autoestima que estás manejando últimamente es lógico que te lo tomes así...\" con tono de preocupación.",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Le recordás exactamente el día y la hora en que te lloró por eso para ganarle la discusión por K.O.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Te cruzás de brazos, ponés cara de que su opinión no vale nada y lo ignorás fijamente.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 7,
+      "texto": "Un amigo te hace una crítica constructiva, con todo el respeto del mundo, sobre una actitud tuya que le molestó.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Te agradezco muchísimo tu aporte. Me encanta que me digas esto justo vos, que tenés la vida súper resuelta... besos de luz.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Escuchás con atención y, si tiene razón, decís: \"Tenés razón, mala mía, voy a tratar de corregirlo\".",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Tenés razón, perdón...\" (Y ponés cara de perrito apaleado para que él termine pidiéndote perdón a vos).",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Ah, mirá qué interesante... Bueno, hablemos de cuando vos hiciste X, Y y Z el verano pasado.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Te encogés de hombros, mirás para otro lado y no le contestás absolutamente nada, anulando su voz.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 8,
+      "texto": "Compran algo para compartir en un kiosco y tu amigo no tiene saldo para darte su mitad exacta en el momento.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"No pasa nada gordo, yo te invito... ya sé que a vos te cuesta un poco más llegar a fin de mes, no te hagas drama.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Tranqui, me lo transferís después cuando puedas o me pagás el próximo café y quedamos a mano.\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Bueno, no pasa nada...\" (Pero agarrás el paquete y te comés el 80% vos porque saliste a rescatar la cuenta).",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Sostenés la mano estirada en silencio esperando a que abra la app del banco para que te haga la transferencia ahí mismo.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Le decís \"Dejá, no es nada\" y por dentro jurás no volver a compartir un gasto con él nunca más.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 9,
+      "texto": "Tu amigo emprende un proyecto o pasatiempo nuevo al que le pone mucho corazón, pero recién arranca y el resultado es muy amateur.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"¡Amo que intentes cosas nuevas! Obviamente se nota que estás arrancando, pero la intención es lo que cuenta mi vida.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Lo bancás, le das feedback sincero solo si te lo pide y le tirás buena onda genuina para que siga mejorando.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Está lindo che... igual si le mejorás la calidad a los materiales capaz podés empezar a cobrarlo un poco más caro.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Está bueno, pero viste que Fulanito hace lo mismo y le queda re profesional... tendrías que pedirle consejos a él.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Mirás el producto/foto, ponés cara de 'Ah, mirá vos' y cambiás de tema al instante.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 10,
+      "texto": "Hacen una juntada en tu casa. Un amigo cae con una botella de vino o bebida de marca extremadamente económica.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Decís a viva voz: \"¡Ay qué tierno! Trajo el vinito del pueblo. Guardémoslo para cuando no sintamos el gusto\".",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Agarrás la botella, la abrís, servís copas para todos y la tomás con la misma naturalidad que cualquier otra.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Gracias che...\" (Guardás su botella abajo y ponés sobre la mesa la botella cara que compraste vos para que se note).",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Le decís \"Dejá ese ahí\" y te servís únicamente de la botella que trajiste vos sin ofrecerle de la tuya.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Ni la abrís, la dejás en un rincón y tomás agua toda la noche para no tocar su botella.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 11,
+      "texto": "Se filtra un video íntimo de una persona del grupo. Detalle: esta persona SIEMPRE se burlaba de forma cruel cuando a otros les pasaba lo mismo.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Es una bajeza total lo que te hicieron. Más allá de lo que vos decías antes, esto es un delito y nadie se lo merece.\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Escribís: \"Uff, qué garrón... y bueno, como decías vos, el pez por la boca muere dicen... pero tranqui, ya va a pasar.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Ay mi amor, qué rápido que llega el karma. Te mando mucha luz, menos mal que vos siempre fuiste tan empático, ¿no?\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Reenviás el video a otro grupo con el sticker comiendo pochoclos: \"Miren quién cayó por escupir para arriba\".",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Clavás el visto, no emitís sonido. Si te preguntan, decís: \"Uy, ni abrí el link, me da asco meterme en la intimidad ajena\".",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 12,
+      "texto": "Un amigo te debe plata hace un mes. Un sábado cae a la juntada con un celular carísimo y nuevo en la mano.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"¡Qué hermoso! Seguro con este sí te andan las notificaciones para acordarte de las transferencias, ¿no?\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Lindo celu che. Se nota que venís ahorrando de todos lados para comprártelo...\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Alto celu. Che amigo, hablando de tecnología, ¿me podrás transferir hoy lo que quedó colgado de la otra vez?\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Calculás la deuda, le sumás la inflación del mes, y le mandás un link de cobro formal por WhatsApp sentados en la misma mesa.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Fingís que el celular es invisible. No lo felicitás, y por dentro decidís no volver a invitarle ni un vaso de agua.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 13,
+      "texto": "Una persona del grupo hace un chiste que busca hacer reír, pero fracasa rotundamente y se genera un silencio sepulcral.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Le tocás el brazo con lástima: \"Ay, es tan particular tu humor... me da tanta ternura cómo lo intentás igual\".",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Te reís un poquito para salvarle las papas y cambiás de tema sutilmente para sacarlo del apuro.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Uy, qué silencio incómodo... bueno, che, ¿alguien quiere más cerveza?\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Por favor, sáquenle el micrófono a este muchacho que nos está avergonzando a todos frente a las visitas.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Lo mirás fijo sin expresión facial, esperás tres segundos para que sufra, y retomás la charla con el de al lado.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 14,
+      "texto": "Un amigo te regala para tu cumpleaños unas medias de supermercado sabiendo que vos le regalaste algo carísimo para el suyo.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"¡Ah, gracias! Igual quedate tranqui que a la vuelta te devuelvo el tupper que me prestaste y ya quedamos a mano.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Dejás el regalo cerrado arriba de la mesa toda la noche y 'sin querer' te lo olvidás cuando te vas.",
+          "puntos": 2,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"¡Gracias! Un re lindo detalle, me re sirven.\" (Y lo dejás pasar, entendiendo que capaz no tenía un peso).",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"¡Ay qué lindas! Se nota que las agarraste a las corridas. No te hubieras molestado, con tu presencia bastaba.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "\"Gracias... las voy a guardar en un cajón súper especial así no se me arruinan nunca.\"",
+          "puntos": 5,
+          "es_tibia": true
+        }
+      ]
+    },
+    {
+      "id_pregunta": 15,
+      "texto": "Tu amigo/a se queja por enésima vez de que 'no consigue pareja porque nadie está a su nivel', pero le corta la cara a todos.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"El problema no sos vos, el mundo terrenal todavía no está preparado para tus exigencias de realeza... paciencia.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Y bueno, mejor solo que mal acompañado, ya va a llegar el príncipe/princesa cuando dejes de buscar...\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Sos insoportable. No te aguanta nadie, bajá un poco los humos que no sos Angelina Jolie/Brad Pitt.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Amigo/a, sos re exigente y bochás a todos al primer error. Date la oportunidad de conocer a la gente.\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Empezás a bostezar exageradamente mirando al techo cada vez que saca el tema, sin decir una palabra.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },{
+      "id_pregunta": 16,
+      "texto": "Un amigo se obsesiona con una rutina de gimnasio, te da consejos que no le pediste y critica lo que estás comiendo.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Amo tu nueva etapa fitness. Me encanta verte tan obsesionado, a ver cuánto te dura esta vez la fuerza de voluntad.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Re bien che. Yo la verdad prefiero ser feliz y comer con culpa, pero te re banco eh, ojalá tengas resultados.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Comete tu ensalada en paz y dejá de rompernos las pelotas, que hace una semana te bajabas una docena de empanadas.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Lo mirás a los ojos, le das un mordisco enorme a tu hamburguesa con queso, y masticás lentamente sin responder.",
+          "puntos": 2,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "\"Qué bueno que te sientas tan bien con este cambio. Yo por ahora vengo bien con mi rutina, pero gracias.\"",
+          "puntos": 0,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 17,
+      "texto": "Un integrante del grupo 'toma prestada' una frase graciosa, una idea o un chiste que VOS inventaste y la cuenta como propia.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"¡Ay, me fascina cómo repetís las cosas que digo! Sos como un lorito hermoso, me hacés sentir re importante.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Jajaja, me robaste el chiste en la cara, sos un atrevido.\" (Se lo marcás con humor y siguen).",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Che, eso me suena re conocido... ah cierto, lo dije yo hace literal diez minutos acá mismo. Jaja.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Si te faltan ideas propias o personalidad, avisame que te armo un PDF y te presto un par más.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Rodás los ojos tan fuerte que ves tu propio cerebro, suspirás y sacás tu celular.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 18,
+      "texto": "Alguien que siempre llega tarde cae 45 minutos después del horario pactado, caminando lento y con un café comprado en la mano.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"¡Qué bueno que llegaste! Estábamos a punto de llamar a Interpol. Qué lindo cafecito, pobrecito qué estrés.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"¡Al fin! Che, la próxima avisá si te vas a demorar tanto, estábamos por pedir sin vos.\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"La falta de respeto que manejás por el tiempo ajeno es digna de estudio. La próxima ni te gastes en venir.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"No pasa nada... igual ya pedimos, nos moríamos de hambre. Sentate que ahí te hacen un lugarcito.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "E",
+          "texto": "No lo saludás. Dejás que se siente y seguís charlando con el de al lado tratándolo como si fuera transparente.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 19,
+      "texto": "Un amigo te pide que lo acompañes a comprar ropa, se prueba algo hiper ajustado, y te pregunta: '¿Me marca mucho los rollitos?'.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Amigo/a, la verdad no te favorece, te aprieta un montón. Vamos a buscar un talle más o probemos otro corte.\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Ay no, cero. Aparte la ropa ajustada se re usa ahora para cuerpos reales, estás divino.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Y... un poquito te marca. Pero si a vos te gusta cómo te queda, metele para adelante.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Parecés un matambre atado. Sacate eso urgente antes de que se descosa la tela por favor.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Mirás para otro lado, te ponés a acomodar perchas y decís: \"Yo de moda no entiendo nada, preguntale al vendedor\".",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 20,
+      "texto": "Tu amigo empieza a salir con alguien nuevo que claramente es un vago/a, no trabaja, no estudia y lo usa por la plata.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Qué lindo verte en esta faceta tan filantrópica. Es re noble que hayas adoptado a alguien para mantenerlo.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Me alegro que estés feliz... igual, tené cuidado con el tema plata, no dejes que se te cuelguen mucho.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Che, pregunto de frente: ¿esta persona piensa laburar o su proyecto de vida es ser tu garrapata personal?\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Si vos estás bien y te suma, genial. Yo capaz soy más de buscar alguien que esté a la par, pero vos sabrás.\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Evitás organizar salidas en las que él/ella venga con su pareja para no tener que pagarle ni dirigirle la palabra.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 21,
+      "texto": "Tu amigo, que históricamente era un 'rata', consigue un muy buen trabajo y ahora gasta fortunas y critica a los que no pueden seguirle el ritmo.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"¡Me fascina tu evolución! Pasaste de llorar por dividir el pan rallado a dar cátedra de finanzas.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Boludo, bajá un cambio. Hace dos años te pagábamos nosotros las pintas, no te olvides de dónde venís.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Qué bueno que ahora te podés dar estos gustos, pero acordate que no todos estamos en tu misma situación.\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Y... es fácil hablar cuando a uno le sobra, ¿no? Qué lindo debe ser...\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Si propone un plan caro que no podés pagar, decís \"Paso\" en seco y dejás que se junte con su nueva élite.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 22,
+      "texto": "Una persona del grupo te cuenta 'en confianza' un chisme destructivo sobre otro integrante.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Qué lástima que Fulanito sea así... yo no soy de juzgar, pero me doy cuenta de que vos y yo sí vibramos en una lealtad superior.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"No te la puedo creer, contame más.\" (Complicidad chismosa pura).",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Che, me parece re fuerte. Capaz tendrías que hablarlo con él/ella en vez de contármelo a mí.\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Qué bárbaro... igual viste cómo es Fulanito, no me sorprende mucho.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Cambiás de tema y después vas y le advertís disimuladamente a la víctima: 'Cuidate de X que anda diciendo cosas'.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 23,
+      "texto": "Un amigo se hace el 'aliado' de las causas sociales en redes, pero en la juntada privada tira comentarios totalmente nefastos y retrógrados.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Amo como separás a tu militante virtual de tu monstruo fascista interno. Es una flexibilidad ideológica digna de admiración.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Che, a ver si te decidís: o sos deconstruido en internet o sos este troglodita acá. Las dos cosas no se puede.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Boludo, no podés decir eso, es un montón. Te van a cancelar con justa razón.\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Te reís por lo bajo por pánico a ser el único amargo de la mesa, pero por dentro decidís que es la peor persona.",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Grabás un audio disimulado y lo guardás por si algún día necesitás destruirle la reputación pública.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 24,
+      "texto": "A tu amigo/a lo/a dejan por otra persona. La 'otra persona' es objetivamente mucho menos atractiva, inteligente y exitosa que tu amigo/a.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Gorda/o, pensalo así: se fue con alguien a su nivel. Con vos le quedaba grande la ropa y le daba miedo fracasar.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Es un hijo de puta. Ya se va a dar cuenta de lo que perdió cuando se aburra del bagayo que se buscó.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"El problema es de él/ella, no tuyo. Enfocate en vos y en hacer el duelo, ya está.\"",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "\"Y... sobre gustos no hay nada escrito, qué sé yo. Capaz pegaron otra onda, cosas que pasan.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Te limitás a darle abrazos y comprar helado sin opinar de la nueva pareja para no gastar saliva.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 25,
+      "texto": "Van a armar un viaje. Vos organizás. ¿Qué hacés con ese amigo que sabés que es un ancla insoportable que se queja de todo?",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "Lo invitás, pero le dejás re claro: \"Venite obvio, pero esta vez te pido por favor que intentes disfrutar algo, dejá tu aura gris acá\".",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Organizás un viaje 'secreto' con los otros, arman un grupo paralelo y le mienten: 'Uy, pensamos que no querías'.",
+          "puntos": 2,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "No lo invitás de frente: \"Amigo, la verdad que en los viajes siempre estás re fastidioso y nos amargás, prefiero que no vengas\".",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Lo invitás por obligación, y cuando se queja durante el viaje, se la devuelven pasivo-agresivamente haciéndole el vacío.",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Lo sumás, y cuando empieza a quejarse en el destino, le marcan el límite firme en el momento sin hacer un drama.",
+          "puntos": 0,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 26,
+      "texto": "Descubrís que el que se hace el 'exitoso' y pisa cabezas en el grupo, en realidad vive de los padres o está hasta el cuello de deudas.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Qué inspirador verte dar lecciones de éxito. Pensar que detrás hay un nene hermoso que le usa la tarjeta a mami... me da ternura.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Se lo tirás en la cara en una discusión cuando te quiera ningunear: \"Callate fracasado, si a vos te pagan las expensas\".",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "No decís nada, pero lo mirás con cara de lástima crónica cada vez que abre la boca, dejándole saber que sabés su secreto.",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Si te ataca, se lo decís en privado para que baje los humos, pero le cuidás el secreto frente al resto.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Te callás la boca por miedo a que él también sepa algo tuyo y te aplique la 'Destrucción Mutua Asegurada'.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 27,
+      "texto": "Una amiga del grupo se pone de novia con el ex de OTRA amiga del grupo. Todos fingen demencia, pero la ex está destruida.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Es tan de avanzada tu capacidad de reciclar energía amorosa en el mismo ecosistema. Celebro que tu amor sea más fuerte que la lealtad.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Te abrís, les decís \"Son una basura los dos\", y elegís acompañar a la que está destruida sin transar con la traición.",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Y bueno, el amor es así... uno no elige de quién se enamora, pobre, re intentaron no estar juntos pero bueno.\"",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Festejás la pareja y contenés a la traicionada por separado, fingiendo empatía en los dos bandos.",
+          "puntos": 2,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Hacés chistes constantes sobre 'compartir fluidos y babas' cada vez que están juntos para que sientan la incomodidad.",
+          "puntos": 7,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 28,
+      "texto": "Un amigo/a siempre 'se olvida' la billetera o le anda mal el 4G para transferir a la hora de pagar. Ya es sistemático.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Tranqui, pagamos nosotros. Pobre, tenés un bloqueo energético con la abundancia... si querés te paso un terapeuta.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Le retenés el celular o las llaves del auto hasta que no veas el comprobante de transferencia acreditado en tu pantalla.",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Uy amigo, a mí tampoco me anda la tarjeta, me vas a tener que cubrir vos hoy\", haciendo que pase vergüenza frente al mozo.",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Se lo decís a solas: \"Escuchame, todos andamos justos, no me hagas pagar tus cosas cada vez que salimos, hacete cargo\".",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "No lo invitás más a salir. Si pregunta por qué, decís que andás muy a mil y sin plata para planes.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 29,
+      "texto": "Tu amigo invirtió toda su plata en un emprendimiento que VOS le dijiste mil veces que iba a fracasar. Y fracasa miserablemente.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Qué lástima. Pero ganaste un montón de aprendizaje sobre todo lo que yo te dije el año pasado que no tenías que hacer.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "\"Te lo advertí, te dije que era una estupidez. A ver si la próxima me escuchás antes de fundirte.\"",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "\"Es el mercado amigo, la economía está re difícil para todos, no te culpes...\" (Y por dentro disfrutás de tener razón).",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Le tirás un salvavidas moral, lo invitás una birra y le decís: \"Se intentó, ahora a levantar cabeza, yo te banco\".",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Te alejás sutilmente de él porque te da fobia juntarte con perdedores o fracasados.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    },
+    {
+      "id_pregunta": 30,
+      "texto": "Alguien de la mesa estuvo mandándose 'mensajes subidos de tono' con alguien casado y ahora se hace el santo.",
+      "opciones": [
+        {
+          "id_opcion": "A",
+          "texto": "\"Me parece fascinante cómo militás la lealtad acá, cuando por privado sos de una generosidad corporal tremenda con gente con alianza.\"",
+          "puntos": 10,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "B",
+          "texto": "Lo mirás y decís: \"Si me vas a dar clases de moral, acordate que sé a quién le mandás fotos a la madrugada. Callate la boca\".",
+          "puntos": 7,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "C",
+          "texto": "Te cagás de risa por dentro, no decís nada, pero hacés chistes con palabras clave como 'cuernos' o 'fueguito' para que sude en frío.",
+          "puntos": 5,
+          "es_tibia": true
+        },
+        {
+          "id_opcion": "D",
+          "texto": "Le decís a solas: \"Bajá el perfil con el discurso moral porque sabés bien las cagadas que te mandás, un poco de coherencia\".",
+          "puntos": 0,
+          "es_tibia": false
+        },
+        {
+          "id_opcion": "E",
+          "texto": "Sos vos. Vos sos el que se hace el santo pero tenés un historial en el celular que si se filtra destruye tres familias.",
+          "puntos": 2,
+          "es_tibia": false
+        }
+      ]
+    }
+  ],
+  "perfiles_resultado": [
+    {
+      "rango_min": 241,
+      "rango_max": 300,
+      "titulo": "El Sicario de Guante Blanco",
+      "sello": "SADISMO ENCUBIERTO",
+      "descripcion": "Sos la peor pesadilla del grupo. No te alcanza con tener razón; tu cerebro libera dopamina al ver al otro sentirse inferior. Detrás de tu careta de amigo comprensivo, clavás puñales con sonrisas impecables."
+    },
+    {
+      "rango_min": 171,
+      "rango_max": 240,
+      "titulo": "El Usurero Emocional",
+      "sello": "COBRADOR DE PEAJES",
+      "descripcion": "Tu corazón imprime facturas. Para vos la amistad es un Banco Central de favores. Disfrutás el castigo frontal y cobrás deudas en público. Te convencés de que te usan, pero sos vos el que tiene de rehén al resto."
+    },
+    {
+      "rango_min": 111,
+      "rango_max": 170,
+      "titulo": "El Francotirador de Balines",
+      "sello": "TIBIO Y COBARDE",
+      "descripcion": "Querés ser malo, pero no te da la nafta. Sos el rey de tirar la piedra y esconder la mano. Decís atrocidades y, si nadie se ríe, rematás con un 'mentira, te jodo'. Tu moral es tan flexible como un chicle masticado."
+    },
+    {
+      "rango_min": 31,
+      "rango_max": 110,
+      "titulo": "El Desertor Clínico",
+      "sello": "ALEXITIMIA DEFENSIVA",
+      "descripcion": "No sos malo, sos un témpano de ignorancia emocional. Tu forma de lastimar es con un vacío y negligencia tan gélidos que hacés dudar al otro de si sos humano o un androide. Si hay drama, tu mente se apaga."
+    },
+    {
+      "rango_min": 0,
+      "rango_max": 30,
+      "titulo": "El Adulto Funcional",
+      "sello": "ASERTIVIDAD PURA",
+      "descripcion": "O dejaste medio sueldo en terapia o manipulaste el test. Sos el único capaz de frenar a un desubicado sin perder los estribos y de no cobrar favores. Hablás de frente y a otra cosa."
+    }
+  ]
+}
