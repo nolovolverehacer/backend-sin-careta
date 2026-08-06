@@ -6,1079 +6,330 @@
       "id_pregunta": 1,
       "texto": "Un amigo cercano te cuenta llorando que lo echaron del trabajo de manera súper injusta. ¿Qué le decís?",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Che, qué cagada... pero bueno, el país está redifícil, ya vas a conseguir.\"",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"El universo te está vaciando el espacio para una oportunidad cuántica. Agradecele a tu jefe.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Amigo, yo llevo 5 años cobrando miseria, me explotan 12 horas por día. Ojalá me echaran a mí.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "Lo puteás al jefe con él, le servís algo fuerte y le prestás la oreja sin darle soluciones mágicas.",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"Uh, qué bajón.\" (Le palmeás el hombro, mirás el celular y cambiás de tema a los 5 minutos).",
-          "puntos": 2,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "Lo puteás al jefe con él, le servís algo fuerte y le prestás la oreja sin tirarle frases de sobrecito de té.", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "B", "texto": "\"El universo te está vaciando el espacio para una oportunidad cuántica. Mandale luz violeta a tu ex jefe.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "C", "texto": "\"Amigo, yo llevo 5 años cobrando miseria y me explotan 14 horas por día. Ojalá me echaran a mí para poder dormir.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "D", "texto": "\"Uh, qué bajón.\" (Le palmeás el hombro de compromiso y a los 5 minutos le preguntás si vio el partido).", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "E", "texto": "\"Che, qué cagada... pero bueno, el país está redifícil, ya vas a conseguir algo. Todo pasa.\"", "puntos": 5, "es_tibia": true }
       ]
     },
     {
       "id_pregunta": 2,
       "texto": "Una amiga se hace un tatuaje horrendo en el brazo (parece dibujado por un nene en un bache). Pide opinión sincera.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Amiga, es un espanto. Hacé de cuenta que no te dije nada, pero andá averiguando lugares de láser.\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"Tiene... mucha personalidad. Es muy vos, ¿viste? Captura re bien tu esencia.\"",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Yo no tengo ni plata ni estabilidad para pensar en tatuajes. Mi cuerpo es un santuario de estrés.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "La mirás a los ojos fijamente, decís \"Está lindo\" sin mover un músculo, y te vas a buscar agua.",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"Si tus chakras vibran en sintonía con esa tinta, entonces es la Mona Lisa del plano astral.\"",
-          "puntos": 10,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "La mirás a los ojos, decís \"Está re lindo\" sin parpadear, y te vas a buscar agua para huir de la escena.", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "B", "texto": "\"Tiene... muchísima personalidad. Es reee vos, ¿viste? Captura tu esencia a la perfección.\"", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "C", "texto": "\"Amiga, te adoro, pero es un espanto. Hacé de cuenta que no te dije nada y andá buscando un buen láser.\"", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "D", "texto": "\"Si tus chakras vibran en sintonía con esa geometría, entonces llevás la Mona Lisa del plano astral en la piel.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "E", "texto": "\"Yo no tengo plata ni para comer y vos gastando en tinta. Mi cuerpo es un santuario de estrés, no me entra un alfiler.\"", "puntos": 7, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 3,
       "texto": "Es martes, te cruzás con un amigo en la calle y te dice: 'Estoy destruido, dormí 4 horas nomás'. ¿Cuál es tu respuesta?",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Descansar es para cuando estemos muertos, fiera. La abundancia no duerme.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"¿4 horas? ¡Qué lujo! Yo dormí 45 minutos parado en el bondi y mañana dono un riñón.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Che, aflojale un toque que te va a dar un ACV. Andá a dormir una siesta.\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"Y... sí, uff, tremendo. Estamos todos igual, un loquero esta época del año.\"",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"Ah, mirá vos.\" (Seguís caminando a la misma velocidad sin registrar su fatiga).",
-          "puntos": 2,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"Descansar es para cuando estemos muertos, fiera. La abundancia no duerme, hay que manifestar 24/7.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "B", "texto": "\"Ah, mirá vos.\" (Seguís caminando a la misma velocidad sin registrar que el pibe casi se desmaya).", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "C", "texto": "\"¿4 horas? ¡Qué lujo! Yo dormí 45 minutos parado en el bondi y mañana dono un riñón, no doy más.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "D", "texto": "\"Che, aflojale un toque que te va a dar un ACV. Andá a dormir una siesta apenas llegues.\"", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "E", "texto": "\"Y... sí, uff, tremendo. Estamos todos igual, un loquero esta época del año, qué se le va a hacer.\"", "puntos": 5, "es_tibia": true }
       ]
     },
     {
       "id_pregunta": 4,
-      "texto": "Es tu cumpleaños. Tu mejor amigo te dedica un texto hermoso y vulnerable en Instagram exponiendo sus sentimientos.",
+      "texto": "Es tu cumpleaños. Tu mejor amigo te dedica un texto hermoso y súper vulnerable en Instagram exponiendo sus sentimientos.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "Le respondés con la misma profundidad, agradeciendo de corazón que se haya abierto.",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "Le clavás un emoji de las manitos rezando y un corazón rojo. Fin del comunicado.",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Gracias. Ojalá yo tuviera tiempo para redactar testamentos, pero con mis quilombos apenas respiro.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"Las palabras terrenales limitan la conexión cuántica de nuestras almas. Te celebro en silencio.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"Gracias fiera, abrazo.\" (Frío polar absoluto).",
-          "puntos": 2,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"Gracias. Ojalá yo tuviera tiempo para redactar testamentos, pero con mis quilombos apenas respiro.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "B", "texto": "Le respondés con la misma profundidad, agradeciendo de corazón que se haya abierto y mostrado vulnerable.", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "C", "texto": "Le clavás un emoji de las manitos rezando y un corazón rojo. Ni una letra más. Fin del comunicado.", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "D", "texto": "\"Gracias fiera, abrazo.\" (Frío polar absoluto que congela la red social entera).", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "E", "texto": "\"Las palabras terrenales limitan la conexión cuántica de nuestras almas. Te celebro en absoluto silencio.\"", "puntos": 10, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 5,
       "texto": "Dos íntimos amigos se pelean ferozmente en el grupo de WhatsApp. Uno tiene la culpa clarísima. Te piden tu opinión.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "Clavás el visto, archivás el grupo y decís \"Uy, no vi el celular en todo el día\".",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"Chicos, acá los dos tienen un punto válido. No hay verdades absolutas, bajemos un cambio.\"",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "C",
-          "texto": "Le decís de frente al que se equivocó que se mandó una cagada, con tacto pero sin anestesia.",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"No me metan en sus dramas. Yo no tengo energía para absorber estas toxinas con mis problemas.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"El conflicto es una ilusión del ego. Yo los envuelvo en luz violeta transmutadora.\"",
-          "puntos": 10,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"Chicos, acá los dos tienen un punto válido. No hay verdades absolutas, bajemos un cambio y respiremos.\"", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "B", "texto": "\"No me metan en sus dramas. Yo no tengo energía para absorber estas toxinas con todos los problemas que ya tengo.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "C", "texto": "\"El conflicto es una ilusión del ego. Yo los envuelvo en luz violeta transmutadora para que sanen su linaje.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "D", "texto": "Le decís de frente al que se equivocó que se mandó una cagada, con tacto pero sin anestesia.", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "E", "texto": "Clavás el visto, archivás el grupo por 3 días y cuando volvés decís: \"Uy, ni miré el celular en todo el finde\".", "puntos": 2, "es_tibia": true }
       ]
     },
     {
       "id_pregunta": 6,
-      "texto": "Estás saliendo con alguien, y en un momento de intimidad te pregunta: '¿Qué significo yo para vos?'.",
+      "texto": "Estás saliendo con alguien, y en un momento de intimidad te pregunta de la nada: '¿Qué significo yo para vos?'.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "Entrás en pánico, soltás una risa nerviosa y decís \"Uy qué intenso te pusiste, me voy a ver el arroz\".",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"Sos el espejo donde mi alma viene a sanar su karma ancestral.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Y... sos alguien re importante. Ya sabés lo que siento, ¿para qué preguntás cosas raras?\"",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "D",
-          "texto": "Lo mirás directo a los ojos y le decís exactamente lo mucho que lo querés, sin miedo al ridículo.",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"Después de todo lo que me sacrifico por vos laburando de sol a sol, ¿encima querés un poema?\"",
-          "puntos": 7,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "Lo mirás directo a los ojos y le decís exactamente lo mucho que lo querés, sin miedo al ridículo ni vueltas.", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "B", "texto": "Entrás en pánico, soltás una risa súper nerviosa y decís: \"Uy qué intenso te pusiste, me voy a fijar si se hizo el arroz\".", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "C", "texto": "\"Y... sos alguien re importante. Ya sabés lo que siento, ¿para qué preguntás cosas raras?\"", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "D", "texto": "\"Después de todo lo que me sacrifico por vos laburando de sol a sol, ¿encima querés que te recite un poema?\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "E", "texto": "\"Sos el espejo fractal donde mi alma viene a sanar su karma ancestral de vidas pasadas.\"", "puntos": 10, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 7,
-      "texto": "Un amigo soltero crónico se queja amargamente de que siempre lo dejan o atrae a 'gente loca'.",
+      "texto": "Un amigo soltero crónico se queja amargamente de que siempre lo dejan o de que atrae a 'gente loca'.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Amigo, fijate qué estás haciendo vos, capaz estás eligiendo mal o sos infumable, hacete cargo.\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"Tranqui, son rachas, a veces uno liga, a veces no. Ya va a aparecer alguien...\"",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"El universo aleja a la gente porque vos todavía no aprendiste a ser tu propia naranja entera, soltá.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"Y qué querés que te diga, yo sigo en pareja aguantando berrinches, mi vida sí es una condena.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "Lo mirás con cara de póker, tomás cerveza y preguntás: '¿De qué cuadro era el árbitro ayer?'.",
-          "puntos": 2,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"El universo te aleja a la gente porque vos todavía no aprendiste a ser tu propia naranja entera. Soltá.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "B", "texto": "\"Tranqui, son rachas, a veces uno liga, a veces no. Ya va a aparecer alguien, no te persigas...\"", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "C", "texto": "\"Amigo, fijate qué estás haciendo vos, capaz estás eligiendo mal o sos infumable conviviendo, hacete cargo.\"", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "D", "texto": "Lo mirás con cara de póker, tomás un sorbo de cerveza y le preguntás: 'Che, ¿a qué hora juega Boca hoy?'.", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "E", "texto": "\"Y qué querés que te diga, yo sigo en pareja aguantando berrinches todos los días, mi vida sí es una condena.\"", "puntos": 7, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 8,
-      "texto": "Tu amigo se gasta sus ahorros en un curso carísimo, no avalado, sobre 'Trading Cuántico y Sanación de Chakras'.",
+      "texto": "Tu amigo se gasta sus pocos ahorros en un curso carísimo y de dudosa procedencia sobre 'Trading Cuántico y Sanación de Chakras'.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Amigo, te acaban de estafar de acá a la China. Cancelá la tarjeta y salí de ahí ya.\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"Yo no tengo un peso ni para el chino del barrio y vos tirando plata en esto... qué injusticia.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Ah. Mirá qué bien. Suerte con eso.\" (Te das vuelta con frialdad y lo dejás hundirse solo).",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"Somos seres de luz que ahora aprenderán a invertir en el plano etérico. Hermoso salto.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"Si a vos te hace feliz y sentís que te sirve, te re banco. Es tu plata.\"",
-          "puntos": 5,
-          "es_tibia": true
-        }
+        { "id_opcion": "A", "texto": "\"Yo no tengo un peso ni para el chino del barrio y vos tirando plata en estas sectas... qué injusticia divina.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "B", "texto": "\"Somos seres de luz que ahora aprenderán a multiplicar la abundancia en el plano etérico. Hermoso salto cuántico.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "C", "texto": "\"Ah. Mirá qué bien. Suerte con eso.\" (Te das vuelta con frialdad y dejás que se funda solo).", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "D", "texto": "\"Si a vos te hace feliz y sentís en el corazón que te sirve, te re banco. Total, es tu plata.\"", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "E", "texto": "\"Amigo, te acaban de estafar de acá a la China. Cancelá el pago de la tarjeta y salí de ahí ya mismo.\"", "puntos": 0, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 9,
-      "texto": "Vas a cenar a la casa de un amigo. El plato es objetivamente una goma incomible, cruda por dentro y quemada por fuera.",
+      "texto": "Vas a cenar a la casa de un amigo. El plato es objetivamente una suela incomible: cruda por dentro y quemada por fuera.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Che, se te fue la mano con el fuego me parece, pidamos unas empanadas, no pasa nada.\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "Te comés todo haciendo arcadas para demostrar cuánto sos capaz de sufrir y sacrificarte por el prójimo.",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Es una propuesta súper interesante. Tiene un sabor... rústico.\" (Dejás casi todo en el plato).",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"Masticar carbón es excelente para desintoxicar las emociones oscuras del tercer chakra.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "Empujás la comida por el plato fingiendo masticar, y decís \"Perdón, merendé re tarde\".",
-          "puntos": 2,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"Es una propuesta gastronómica súper interesante. Tiene un sabor... rústico.\" (Dejás casi todo en el plato sin quejarte).", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "B", "texto": "\"Che, se te fue la mano con el fuego me parece, pidamos unas empanadas que invito yo, no pasa nada.\"", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "C", "texto": "\"Masticar carbón es una práctica excelente para desintoxicar las emociones oscuras alojadas en el tercer chakra.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "D", "texto": "Te comés todo haciendo arcadas disimuladas para demostrarte a vos mismo cuánto sos capaz de sacrificarte por el prójimo.", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "E", "texto": "Empujás la comida por los bordes del plato fingiendo masticar, y tirás un \"Perdón, merendé re tarde, no me entra más\".", "puntos": 2, "es_tibia": true }
       ]
     },
     {
       "id_pregunta": 10,
       "texto": "Alguien del grupo manda un meme CLARAMENTE ofensivo que cruza un límite feo, pero todos los demás ponen 'jajaja'.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "Ponés 'jajajaja' para no desentonar, pero por dentro redactás una tesis sobre su pobreza moral.",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"Che, me parece que te fuiste un poco al pasto con este chiste. No da.\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Sé que la ley del retorno te va a devolver esta vibración en forma de enfermedad kármica, besos.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "Ignorás el mensaje por completo. Para vos el chat no existe y tus valores están a salvo en el silencio.",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"¿Tienen energía para reírse? Ojalá mi vida fuera tan fácil y sin responsabilidades como la suya.\"",
-          "puntos": 7,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "Ignorás el mensaje por completo. Para vos el chat no existe y tus valores están a salvo en la cobardía del silencio.", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "B", "texto": "\"¿Tienen energía para reírse? Ojalá mi vida fuera tan fácil y sin responsabilidades como la suya.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "C", "texto": "\"Che, me parece que te fuiste un poco al pasto con este chiste. No da ni un poco.\"", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "D", "texto": "Ponés 'jajajaja' para no desentonar y no armar bardo, pero por dentro redactás una tesis sobre su pobreza moral.", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "E", "texto": "\"Sé que la ley del retorno te va a devolver esta baja vibración en forma de enfermedad kármica, besos de luz.\"", "puntos": 10, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 11,
-      "texto": "Te escriben por un grupo de WhatsApp preguntando quién puede dar una mano con una mudanza este fin de semana.",
+      "texto": "Te escriben por el grupo preguntando quién puede dar una mano con una mudanza este fin de semana largo.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Mi campo áurico no tolera levantar cajas terrenales. Estoy en desintoxicación de cargas.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"Che, este finde lo tengo explotado, pero si necesitan el domingo a última hora paso un rato.\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Tengo el ciático a la miseria y no duermo, pero bueno, voy a ir a romperme la espalda.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "Clavás visto, borrás la notificación, y el lunes decís: 'Uy, se me re traspapeló el chat'.",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"Uy qué buena onda. Les mando las mejores vibras desde acá, ¡avisen cómo queda todo!\"",
-          "puntos": 5,
-          "es_tibia": true
-        }
+        { "id_opcion": "A", "texto": "\"Mi campo áurico no tolera levantar cajas terrenales. Estoy en pleno retiro de desintoxicación de cargas.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "B", "texto": "\"Uy qué buena onda la nueva casa. Les mando las mejores vibras desde acá, ¡avisen cómo queda todo armado!\"", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "C", "texto": "Clavás visto, borrás la notificación, y el lunes decís: 'Uy, recién leo esto, se me re traspapeló el chat'.", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "D", "texto": "\"Tengo el ciático a la miseria y no duermo hace tres días, pero bueno, voy a ir a romperme la espalda por ustedes.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "E", "texto": "\"Che, este finde lo tengo explotado, pero si necesitan el domingo a última hora paso un rato a dar una mano.\"", "puntos": 0, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 12,
-      "texto": "Un amigo te dice con total sinceridad: 'Me siento un poco solo últimamente, no nos vemos nunca'.",
+      "texto": "Un amigo te dice con total sinceridad y tristeza: 'Me siento un poco solo últimamente, no nos vemos nunca'.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Y... es un tema la adultez. Estamos con mil quilombos, la rutina te consume. Ya vamos a organizar.\"",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"Tenés razón. Estuve re colgado. Mañana a la tarde corto antes y nos tomamos unos mates, ¿te va?\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"La soledad no existe, hermano. Somos polvo de estrellas en la gran red universal.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"Daría la vida por sentirme solo un rato. Me paso 18 horas por día rindiendo cuentas. Te cambio de lugar.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "Le das una palmadita en el hombro y le contás que la verdulería del barrio aumentó el precio de la papa.",
-          "puntos": 2,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"Tenés razón. Estuve re colgado y mala mía. Mañana a la tarde corto antes y nos tomamos unos mates, ¿te va?\"", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "B", "texto": "Le das una palmadita en la espalda y le contás que la verdulería del barrio aumentó el precio de la papa de nuevo.", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "C", "texto": "\"Daría la vida por sentirme solo un rato. Me paso 18 horas por día rindiendo cuentas. Te cambio de lugar ya mismo.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "D", "texto": "\"La soledad no existe, hermano. Somos polvo de estrellas conectados en la gran red universal.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "E", "texto": "\"Y... es un tema la adultez. Estamos con mil quilombos, la rutina te consume. Ya vamos a organizar algo.\"", "puntos": 5, "es_tibia": true }
       ]
     },
     {
       "id_pregunta": 13,
       "texto": "Tu amigo se mandó una macana grave en su relación amorosa y te pide consejo sobre qué decirle a su pareja.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Tenés que decirle la verdad sin anestesia, hacerte cargo y bancarte la tormenta. No hay atajos.\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"Si la lastimaste, es porque su alma firmó un contrato kármico para aprender del dolor que generás.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Decile que tuviste una semana de mierda y tu mente colapsó por estrés. Que te tenga paciencia.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"Y... no sé, fijate. Hablale con el corazón. Vos la conocés mejor que yo, sabrás qué decirle.\"",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"Uh, durísimo. Bueno, me tengo que ir porque se me quema la salsa.\" (Nunca volvés a hablar del tema).",
-          "puntos": 2,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"Decile que tuviste una semana de mierda en el laburo y tu mente colapsó por estrés. Que te tenga paciencia.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "B", "texto": "\"Si la lastimaste, es porque su alma firmó un contrato kármico antes de nacer para aprender del dolor que vos generás.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "C", "texto": "\"Y... no sé, fijate. Hablale con el corazón. Vos la conocés mejor que yo, sabrás qué decirle para que no te mate.\"", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "D", "texto": "\"Tenés que decirle la verdad sin anestesia, hacerte cargo de tu cagada y bancarte la tormenta. No hay atajos.\"", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "E", "texto": "\"Uh, durísimo. Bueno, me tengo que ir porque se me quema la salsa.\" (Nunca más en tu vida le volvés a preguntar del tema).", "puntos": 2, "es_tibia": true }
       ]
     },
     {
       "id_pregunta": 14,
       "texto": "Alguien en tu oficina cuenta que renunció para irse de mochilero sin un peso a Asia persiguiendo un sueño.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "Lo mirás inexpresivo, hacés 'Mhm' y seguís tecleando tu Excel como si fuera a llover.",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"¡Qué lindo! Qué envidia sana. ¡Pasala genial y mandá fotos!\" (Por dentro pensás que arruinó su vida).",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Hermano, qué groso. Disfrutá un montón, si necesitás ayuda con el CV a la vuelta avisá.\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"El universo premia el salto de fe. Tu vibración pedía soltar los mandatos del capital.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"Y claro, los que pueden pueden. Algunos tenemos que sostener el país pagando impuestos sufriendo.\"",
-          "puntos": 7,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"¡Qué lindo! Qué envidia sana. ¡Pasala genial y mandá fotos!\" (Mientras por dentro pensás que acaba de arruinar su vida).", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "B", "texto": "\"Hermano, qué groso el coraje. Disfrutá un montón, si necesitás ayuda armando el CV a la vuelta avisame.\"", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "C", "texto": "Lo mirás inexpresivo, hacés un 'Mhm' y seguís tecleando tu planilla de Excel como si fuera a llover.", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "D", "texto": "\"El universo premia el salto de fe. Tu vibración pedía a gritos soltar los mandatos del capitalismo opresor.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "E", "texto": "\"Y claro, los que pueden, pueden. Algunos tenemos que sostener el país pagando impuestos y sufriendo.\"", "puntos": 7, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 15,
-      "texto": "Te olvidás completamente del cumpleaños de un amigo cercano. Te acordás al día siguiente a las 5 de la tarde.",
+      "texto": "Te olvidás completamente del cumpleaños de un amigo cercano. Te acordás recién al día siguiente a las 5 de la tarde.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Amigo, las fechas del calendario gregoriano son una ilusión. Yo te celebro energéticamente siempre.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "Lo llamás: \"Soy un desastre total, te pido mil disculpas. Dejame invitarte una cerveza para compensar\".",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "Le mandás un \"¡Feliz cumple ATRASADOOOO! Jajaja colgué mal, besos!\", como si olvidarse fuera tierno.",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"Perdón, estoy con un estrés que no retengo mi nombre. Ayer laburé hasta las 3 AM y vomité de los nervios.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "Decidís no saludarlo. Ya pasó, es incómodo, preferís que piense que estás amnésico.",
-          "puntos": 2,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"Amigo, las fechas del calendario gregoriano son una ilusión impuesta. Yo te celebro energéticamente todos los días.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "B", "texto": "\"Perdón, estoy con un estrés que no retengo ni mi nombre. Ayer laburé hasta las 3 AM y vomité de los nervios.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "C", "texto": "Lo llamás: \"Soy un desastre total, te pido mil disculpas. Dejame invitarte una cerveza esta semana para compensar\".", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "D", "texto": "Le mandás un \"¡Feliz cumple ATRASADOOOO! Jajaja colgué mal, besos!\", como si olvidarse fuera un rasgo tierno de tu personalidad.", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "E", "texto": "Decidís no saludarlo. Ya pasó, es re incómodo ahora, preferís que piense que estás atravesando una amnesia severa.", "puntos": 2, "es_tibia": true }
       ]
-    },{
+    },
+    {
       "id_pregunta": 16,
       "texto": "Vas en el auto con amigos, hace un calor infernal y uno te dice: 'Che, ¿te molesta si bajamos un poco la ventana?'.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"El calor no existe, es una proyección mental. Respirá hondo y sentí cómo transmutás la temperatura.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "Bajás la ventana, le subís el volumen a la radio para tapar el viento y no volvés a emitir sonido.",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Bajala tranqui. Yo me muero de frío porque tengo las defensas por el piso, pero si me enfermo sigo laburando igual.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"Sí obvio, bajala, prendé el aire si querés, no hay problema.\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"No sé, como quieran, si a ustedes les molesta bájenla, a mí no me cambia, lo que diga la mayoría está bien.\"",
-          "puntos": 5,
-          "es_tibia": true
-        }
+        { "id_opcion": "A", "texto": "Bajás la ventana, le subís el volumen a la radio al máximo para tapar el viento y no volvés a emitir sonido.", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "B", "texto": "\"No sé, como quieran, si a ustedes les molesta bájenla, a mí no me cambia, lo que diga la mayoría está perfecto.\"", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "C", "texto": "\"El calor no existe, es una proyección mental. Respirá hondo y sentí cómo transmutás la temperatura ambiente.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "D", "texto": "\"Bajala tranqui. Yo me muero de frío porque tengo las defensas por el piso, pero si me agarra neumonía laburo igual.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "E", "texto": "\"Sí obvio, bajala, prendé el aire si querés, no hay problema, nos estamos asando.\"", "puntos": 0, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 17,
-      "texto": "Una amiga te manda una captura de pantalla de su ex tóxico volviéndole a escribir a las 3 AM y te pregunta: '¿Qué hago?'.",
+      "texto": "Una amiga te manda captura de su ex tóxico volviéndole a escribir a las 3 AM y te pregunta desesperada: '¿Qué hago?'.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Y... no sé gorda, es re difícil, vos fijate qué sentís, escuchá a tu corazón, pero cuidate.\"",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"No le contestés, bloquealo de nuevo, y si querés voy a tu casa y miramos una película para distraerte.\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Si volvió es porque todavía tienen nudos áuricos por desatar. Aceptalo desde el perdón divino pero sin entregarle tu luz.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"Yo no tengo cabeza para estos dramas de novela, de pedo me acuerdo de pagar los servicios a fin de mes.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "Clavás el visto, te vas a dormir y le respondés a las 11 de la mañana: 'Uy, recién me levanto, ¿qué onda al final?'.",
-          "puntos": 2,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"No le contestés, bloquealo de nuevo ya mismo, y si querés voy a tu casa y miramos una peli para que te distraigas.\"", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "B", "texto": "\"Si volvió es porque todavía tienen nudos áuricos por desatar. Aceptalo desde el perdón divino pero sin entregarle tu luz.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "C", "texto": "\"Mirá, mi vida ya es una película de terror psicológico con mis dramas como para hacerme cargo de otra desgracia, paso.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "D", "texto": "Clavás el visto, te vas a dormir en paz y le respondés a las 11 de la mañana: 'Uy, recién me levanto, ¿qué onda al final?'.", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "E", "texto": "\"Y... no sé gorda, es re difícil, vos fijate qué sentís, escuchá a tu corazón, pero cuidate mucho eh.\"", "puntos": 5, "es_tibia": true }
       ]
     },
     {
       "id_pregunta": 18,
-      "texto": "Llegás a tu trabajo o grupo de estudio y están todos furiosos porque el jefe o profesor les dio una tarea injusta.",
+      "texto": "Llegás a tu trabajo o facultad y están todos furiosos porque el jefe o profesor les encajó una tarea totalmente injusta.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Esto nos pasa por conformistas, pero bueno, necesitamos el título/plata, así que calladitos y a obedecer.\"",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"¿Tarea injusta? ¡Dénmela a mí! Yo vivo para tapar los baches de esta organización. Yo cargo la cruz.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "Te sentás en tu silla, te ponés auriculares, no emitís ni un sonido y dejás que el fuego cruzado no te salpique.",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"Toda injusticia es una bendición oculta para fortalecernos. Agradezcan al jefe por esta oportunidad de crecer.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "Si el reclamo es justo, te sumás con altura; si es una exageración, te reís y proponés dividir el trabajo.",
-          "puntos": 0,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"¿Tarea injusta? ¡Dénmela a mí! Yo vivo para tapar los baches de esta organización. Yo cargo la cruz de todos.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "B", "texto": "Te sentás en tu silla, te ponés los auriculares, no emitís ni un sonido y dejás que el fuego cruzado no te salpique.", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "C", "texto": "\"Esto nos pasa por conformistas, pero bueno, necesitamos el título/plata, así que calladitos la boca y a obedecer.\"", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "D", "texto": "Si el reclamo es justo, te sumás a la queja con altura; si es una exageración, te reís y proponés dividir el trabajo.", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "E", "texto": "\"Toda injusticia es una bendición oculta para fortalecernos. Agradezcan al jefe por esta oportunidad de expansión.\"", "puntos": 10, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 19,
-      "texto": "Un amigo sube un post a redes sociales festejando un logro que a vos en el fondo te da envidia o te hace sentir estancado.",
+      "texto": "Un amigo sube un post festejando un súper logro que a vos, en el fondo, te da mucha envidia y te hace sentir estancado.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Qué lindo ver florecer tu semilla cósmica. Mis guías celestiales y yo celebramos tu vibración abundante.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "Le mandás un mensaje sincero: 'Qué groso, ¡te re felicito loco, más que merecido!'. (Y procesás tu envidia a solas).",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "Ponés un 'Me gusta' aséptico sin comentar, fingiendo que lo viste de reojo.",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"Ojalá yo tuviera tiempo para metas así, pero bueno, los que nos rompemos el lomo remando no tenemos esos lujos.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"¡¡Genio!! Todo sacrificio tiene su recompensa, me alegro muchísimo por vos.\"",
-          "puntos": 5,
-          "es_tibia": true
-        }
+        { "id_opcion": "A", "texto": "\"¡¡Genio!! Todo sacrificio tiene su recompensa, me alegro muchísimo por vos.\" (Comentario genérico de manual).", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "B", "texto": "Le mandás un mensaje sincero: 'Qué groso, ¡te re felicito loco, más que merecido!'. (Y procesás tu envidia a solas en terapia).", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "C", "texto": "\"Qué lindo ver florecer tu semilla cósmica. Mis guías celestiales y yo celebramos tu vibración abundante.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "D", "texto": "\"Ojalá yo tuviera tiempo para metas así, pero bueno, los que nos rompemos el lomo remando no tenemos esos lujos.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "E", "texto": "Ponés un 'Me gusta' súper aséptico sin comentar, fingiendo que lo viste de reojo haciendo scroll rápido.", "puntos": 2, "es_tibia": true }
       ]
     },
     {
       "id_pregunta": 20,
-      "texto": "En una charla profunda, te preguntan cuál creés que es tu mayor defecto.",
+      "texto": "En una charla profunda de madrugada, te preguntan de frente cuál creés que es tu mayor defecto.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Y... no sé, a veces soy un poco colgado, qué sé yo. O capaz me enojo rápido, puede ser.\"",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"Te podría decir que soy egoísta o controlador en algunas cosas, trato de manejarlo para no joder al resto.\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Soy demasiado perfeccionista y me involucro tanto que me termino enfermando de amor al prójimo.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"El concepto de 'defecto' es limitante del ego. Yo no tengo defectos, tengo 'áreas de aprendizaje áurico'.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "Mirás el techo buscando una respuesta y decís 'Uff, tengo tantos que ni sé por dónde arrancar' (Y no decís ninguno).",
-          "puntos": 2,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"El concepto de 'defecto' es limitante del ego. Yo no tengo defectos, tengo 'áreas de aprendizaje áurico en expansión'.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "B", "texto": "\"Soy demasiado perfeccionista y me involucro tanto con los problemas del resto que me termino enfermando de amor al prójimo.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "C", "texto": "Mirás el techo fingiendo que lo pensás y decís 'Uff, tengo tantos que ni sé por dónde arrancar' (Y esquivás la respuesta).", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "D", "texto": "\"Y... no sé, a veces soy un poco colgado, qué sé yo. O capaz me enojo medio rápido a veces, puede ser.\"", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "E", "texto": "\"Te podría decir que soy egoísta o re controlador en algunas cosas, y trato de manejarlo para no joder al resto.\"", "puntos": 0, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 21,
-      "texto": "Se muere la mascota de un amigo o le pasa una tragedia personal ineludible. ¿Qué le decís?",
+      "texto": "Se muere la mascota de un amigo de la infancia o le pasa una tragedia personal ineludible. ¿Qué le decís?",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Completó su misión kármica. No lo llores desde el ego porque no dejás que su almita ascienda hacia la luz.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"Che, por lo menos ya no vas a gastar en veterinario... yo pagué la luz y casi me infarto, no doy más.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Te mando mucha fuerza, el tiempo cura todo.\"",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "D",
-          "texto": "Le mandás un emoji de corazón roto y a la semana le hablás de otra cosa fingiendo demencia.",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "Vas a la casa, lo abrazás en silencio, cebás mates y dejás que llore todo lo que tenga que llorar.",
-          "puntos": 0,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "Vas a la casa, lo abrazás en silencio, cebás mates y dejás que llore todo lo que tenga que llorar sin interrumpir.", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "B", "texto": "\"Te mando muchísima fuerza, acordate que el tiempo cura todo.\"", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "C", "texto": "\"Che, por lo menos ya no vas a gastar más en veterinario... yo pagué la tarjeta hoy y casi me infarto, no doy más.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "D", "texto": "Le mandás un emoji de corazón roto y a la semana le hablás de otra cosa totalmente random fingiendo demencia.", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "E", "texto": "\"Completó su misión kármica. No lo llores desde el ego porque no dejás que su almita ascienda hacia la luz de Sirio.\"", "puntos": 10, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 22,
-      "texto": "Un amigo te pide plata prestada. Vos TENÉS la plata y te sobra, pero no tenés ganas de prestársela.",
+      "texto": "Un amigo te pide plata prestada. Vos TENÉS la plata y te sobra, pero no tenés absolutamente ninguna gana de prestársela.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Ay dejame revisar porque mañana me debitan la tarjeta y creo que quedo en rojo... yo te aviso.\" (Nunca le avisás).",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"No te presto.\" (Seco, sin anestesia, dejándolo en un silencio sepulcral).",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Che, por regla personal no le presto plata a amigos porque siempre termina arruinando la relación. Perdóname.\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"Prestar dinero corta tu flujo de manifestación de abundancia. Tenés que vibrar más alto para que llegue a vos.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"¡¿Plata?! Me mantengo a base de fideos hervidos, el estrés de las deudas me está matando, ¡¿cómo me vas a pedir a mí?!\"",
-          "puntos": 7,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"No te presto.\" (Seco, sin anestesia, dejándolo en un silencio telefónico sepulcral).", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "B", "texto": "\"Prestar dinero corta tu flujo de manifestación de abundancia. Tenés que vibrar más alto para que el dinero llegue a vos.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "C", "texto": "\"Che, por regla personal no le presto plata a amigos porque siempre termina arruinando la relación. Perdóname en serio.\"", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "D", "texto": "\"Ay dejame revisar porque mañana me debitan la tarjeta y creo que quedo en rojo... yo te aviso.\" (Y te morís sin avisarle).", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "E", "texto": "\"¡¿Plata?! Me mantengo a base de arroz hervido, el estrés de las deudas me está matando, ¡¿cómo me vas a pedir a mí?!\"", "puntos": 7, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 23,
-      "texto": "Un amigo te cancela una juntada 10 minutos antes de que te subas al bondi o al auto.",
+      "texto": "Un amigo te cancela una juntada 10 minutos antes, cuando vos ya estabas con las llaves en la mano para salir.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Ah, tranqui, no pasa nada, cero estrés.\" (Mientras por dentro te hierve la sangre y lo insultás mentalmente).",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"Mejor, me hacés un favor. Vengo durmiendo tres horas, mi cuerpo pedía a gritos frenar, soy un zombie.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Boludo, avisame con un poco más de tiempo la próxima que ya estaba en la puerta, me partís al medio.\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"El universo sacó este plan del medio porque necesitaba que yo tuviera este espacio para conectar conmigo mismo.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"K.\" (Clavás visto, no respondés y lo castigás con la ley del hielo por dos semanas).",
-          "puntos": 2,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"Mejor, me hacés un favorazo. Vengo durmiendo tres horas, mi cuerpo pedía a gritos frenar, soy un zombie andante.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "B", "texto": "\"Boludo, avisame con un poco más de tiempo la próxima que ya estaba en la puerta, me partís al medio.\"", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "C", "texto": "\"Ah, tranqui, no pasa nada, cero estrés.\" (Mientras por dentro te hierve la sangre y lo recontra puteás mentalmente).", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "D", "texto": "\"El universo sacó este plan del medio porque necesitaba que yo tuviera este espacio sagrado para conectar conmigo mismo.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "E", "texto": "\"K.\" (Clavás visto, no respondés y lo castigás con la ley del hielo estricta por dos semanas).", "puntos": 2, "es_tibia": true }
       ]
     },
     {
       "id_pregunta": 24,
-      "texto": "Tu pareja o íntimo amigo te encara y te dice de frente: 'Siento que no te importo, nunca me decís que me querés'.",
+      "texto": "Tu pareja o íntimo amigo te encara con lágrimas y te dice: 'Siento que no te importo, nunca me decís que me querés'.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Yo te demuestro que te quiero rompiéndome el lomo todo el día, pagando las cosas y aguantando presión inhumana.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "Lo mirás confundido: \"Pero si te lo dije para tu cumpleaños... ¿cuántas veces necesitás escucharlo?\".",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"El amor no se verbaliza con lenguaje humano. Yo te envuelvo en mi vibración de luz en la 5ta dimensión.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "Te quedás en silencio, mirás hacia otro lado, suspirás y decís: \"Qué denso te pusiste, ¿hablamos mañana?\".",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"Tenés razón. Me cuesta un huevo expresarlo y soy un poco frío, pero te juro que sos importantísimo para mí.\"",
-          "puntos": 0,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "Lo mirás súper confundido: \"Pero si te lo dije claro para tu cumpleaños... ¿cuántas veces por año necesitás escucharlo?\".", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "B", "texto": "Te quedás en silencio total, mirás hacia otro lado, suspirás y decís: \"Qué denso te pusiste, ¿hablamos mañana de esto?\".", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "C", "texto": "\"El amor no se verbaliza con lenguaje humano. Yo te envuelvo en mi vibración de luz en la quinta dimensión.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "D", "texto": "\"Tenés razón. Me cuesta un huevo expresarlo y a veces soy una piedra, pero te juro que sos importantísimo para mí.\"", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "E", "texto": "\"Yo te demuestro que te quiero rompiéndome el lomo todo el día, pagando las cosas y aguantando presión inhumana.\"", "puntos": 7, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 25,
-      "texto": "En un trabajo en grupo, una persona no hizo absolutamente NADA. Hay que entregar. ¿Qué hacés?",
+      "texto": "En un trabajo en grupo (facultad/trabajo), una persona no hizo absolutamente NADA. Hay que entregar hoy. ¿Qué hacés?",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Su alma está en estado de reposo. Hagamos su parte con amor para no cargar nuestro karma de resentimiento.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "Escribís en el grupo: \"Chicos, tratemos todos de ponerle un poquito más de onda, ¿dale?\" (Sin nombrar al culpable).",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "C",
-          "texto": "Dejás que no se entregue el trabajo, te cruzás de brazos y esperás que el mundo arda sin decir una palabra.",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "Le decís de frente: \"Si no traés tu parte para hoy a las 5, te bajamos del trabajo, corta la bocha\".",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "Hacés su parte llorando de bronca a las 4 AM, victimizándote de que 'cargás con el mundo en tu espalda'.",
-          "puntos": 7,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"Su alma está en estado de reposo. Hagamos su parte con amor para no cargar nuestro karma de resentimiento.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "B", "texto": "Hacés su parte llorando de bronca a las 4 AM, quejándote al día siguiente de que 'cargás con el mundo en tu espalda'.", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "C", "texto": "Le decís de frente: \"Si no traés tu parte para hoy a las 5, te bajamos del trabajo y le avisamos al jefe, corta la bocha\".", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "D", "texto": "Dejás que no se entregue el trabajo, te cruzás de brazos y esperás que el mundo arda sin decir una sola palabra.", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "E", "texto": "Escribís en el grupo: \"Chicos, tratemos todos de ponerle un poquito más de onda, ¿dale?\" (Sin nombrar jamás al culpable).", "puntos": 5, "es_tibia": true }
       ]
     },
     {
       "id_pregunta": 26,
-      "texto": "Descubrís pruebas irrefutables de que a tu mejor amigo/a le están metiendo los cuernos. ¿Qué hacés?",
+      "texto": "Descubrís pruebas irrefutables (fotos, chats) de que a tu mejor amigo/a le están metiendo los cuernos. ¿Qué hacés?",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"La monogamia es una cárcel del ego capitalista. Le mando luz violeta a su vínculo.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"No es mi relación, no es mi problema. Ojos que no ven...\" Y te guardás el secreto a la tumba.",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "Vas al infiel y le decís: \"Le decís vos o le digo yo\". (Pero si no le dice, vos tampoco le decís nada por cagón).",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"Mirá, mi vida ya es una película de terror psicológico con mis dramas como para hacerme cargo de otra desgracia, paso.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "Vas a la casa de tu amigo, le servís un trago, le mostrás las pruebas de frente y te bancás el llanto y el caos.",
-          "puntos": 0,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "Vas a la casa de tu amigo, le servís un trago fuerte, le mostrás las pruebas de frente y te bancás el llanto y el caos.", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "B", "texto": "Vas al infiel y le decís en secreto: \"Le decís vos o le digo yo\". (Pero si el infiel no le dice, vos al final te callás por cagón).", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "C", "texto": "\"No es mi relación, no es mi problema. Ojos que no ven...\" Y te guardás el secreto hasta el día de tu muerte.", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "D", "texto": "\"Mirá, mi vida ya es una película de terror psicológico con mis dramas como para hacerme cargo de otra desgracia, paso.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "E", "texto": "\"La monogamia es una cárcel del ego capitalista. Le mando luz violeta a su vínculo para que trasciendan los celos.\"", "puntos": 10, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 27,
-      "texto": "Hablaste mal a las espaldas de alguien del grupo. Esa persona se entera, te encara y te dice: '¿Es verdad que dijiste esto de mí?'.",
+      "texto": "Hablaste muy mal a las espaldas de alguien del grupo. Esa persona se entera, te encara y te dice: '¿Es verdad que dijiste esto de mí?'.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Ay no, me sacaron de contexto, yo lo que quise decir fue algo re distinto, hubo un malentendido.\"",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"Lo que yo haya dicho habla más de tu herida de rechazo que de mí. Vos elegís si vibrar con eso o soltarlo.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Sí, lo dije. Me equivoqué, estuve mal, te pido perdón sin excusas.\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "Te das vuelta, decís \"No tengo tiempo para planteos de secundaria\", y te vas dejándolo hablando solo.",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"¡Lo dije porque ese día había dormido 2 horas y estaba colapsando! ¡¿Encima que estoy mal me atacás?!\"",
-          "puntos": 7,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"¡Lo dije porque ese día había dormido 2 horas y estaba colapsando mentalmente! ¡¿Encima que estoy mal me atacás?!\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "B", "texto": "\"Lo que yo haya dicho habla más de tu herida de rechazo que de mí. Vos elegís si vibrar con eso o soltarlo hoy.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "C", "texto": "\"Ay no, me sacaron recontra de contexto, yo lo que quise decir fue algo re distinto, hubo un teléfono descompuesto.\"", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "D", "texto": "Te das vuelta, le decís \"No tengo tiempo para planteos de secundaria\", y te vas caminando dejándolo hablando solo.", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "E", "texto": "\"Sí, lo dije. Fui un boludo, me equivoqué y estuve pésimo. Te pido perdón sin excusas.\"", "puntos": 0, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 28,
       "texto": "Te invita a cenar a su casa un familiar súper tóxico que siempre te hace comentarios hirientes. Vos NO querés ir.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Voy a ir como un pilar de luz blanca. Sus ofensas rebotarán en mi escudo pránico y limpiaré el árbol genealógico.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "Vas, aguantás en silencio mirando el celular abajo de la mesa y al irte decís \"Qué rica la comida, hermoso todo\".",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "C",
-          "texto": "Vas, dejás que te falten el respeto, volvés llorando, y te pasás 6 meses quejándote de 'lo mucho que sufrís por la familia'.",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"No voy a ir. Los quiero, pero no la paso bien en esas juntadas. Mandales un beso.\"",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "Lo bloqueás de WhatsApp el 23 de diciembre y lo desbloqueás el 2 de enero sin dar explicación.",
-          "puntos": 2,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "Lo bloqueás de WhatsApp el 23 de diciembre y lo desbloqueás mágicamente el 2 de enero sin dar una sola explicación.", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "B", "texto": "\"No voy a ir. Los quiero mucho, pero no la paso bien en esas juntadas y termino de mal humor. Mandales un beso.\"", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "C", "texto": "Vas, dejás que te falten el respeto, volvés llorando, y te pasás 6 meses quejándote de 'lo mucho que sufrís por la familia'.", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "D", "texto": "\"Voy a ir como un pilar de luz blanca. Sus ofensas rebotarán en mi escudo pránico y limpiaré el árbol genealógico.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "E", "texto": "Vas, aguantás en silencio mirando el celular abajo de la mesa y al irte decís \"Qué rica la comida, hermoso todo gracias\".", "puntos": 5, "es_tibia": true }
       ]
     },
     {
       "id_pregunta": 29,
       "texto": "Tu íntimo amigo consigue EXACTAMENTE el puesto o logro que VOS querías y por el que fracasaste. Te lo cuenta eufórico.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"¡Ay qué lindo! ¡Felicidades!\" (Pero le cancelás las próximas 3 salidas porque no aguantás ver su éxito).",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "B",
-          "texto": "\"Felicitaciones... te advierto que te destruye la salud mental, preparate para no dormir y tener gastritis como yo.\"",
-          "puntos": 7,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "Te tragás el veneno, reconocés tu envidia por dentro, pero lo abrazás y le decís \"Qué orgullo hermano\" de corazón.",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "D",
-          "texto": "\"Ah, bien ahí. Che, ¿viste que mañana anuncian paro de colectivos?\" (Desinflás su momento ignorándolo).",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"No era mi línea temporal. Yo estoy destinado a proyectos de mayor vibración, por eso el universo te lo dio a vos.\"",
-          "puntos": 10,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"¡Ay qué lindo! ¡Felicidades!\" (Pero le cancelás las próximas 3 salidas porque te genera rechazo físico ver su éxito).", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "B", "texto": "\"Ah, bien ahí. Che, ¿viste que mañana anuncian paro de colectivos?\" (Desinflás su momento ignorando la noticia).", "puntos": 2, "es_tibia": true },
+        { "id_opcion": "C", "texto": "\"No era mi línea temporal. Yo estoy destinado a proyectos de mayor vibración, por eso el universo te lo cedió a vos.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "D", "texto": "Te tragás el veneno, reconocés tu envidia por dentro, pero lo abrazás y le decís \"Qué orgullo hermano\" de corazón.", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "E", "texto": "\"Felicitaciones... igual te advierto que te va a destruir la salud mental, preparate para no dormir y tener gastritis como yo.\"", "puntos": 7, "es_tibia": false }
       ]
     },
     {
       "id_pregunta": 30,
-      "texto": "Alguien que te arruinó la vida (te estafó, te traicionó feo) vuelve años después llorando y te pide perdón de rodillas.",
+      "texto": "Alguien que te arruinó la vida (te estafó, te traicionó muy feo) vuelve años después llorando y te pide perdón de rodillas.",
       "opciones": [
-        {
-          "id_opcion": "A",
-          "texto": "\"Te perdoné el día que me heriste. Fuiste solo un maestro disfrazado de oscuridad para despertar mi yo superior.\"",
-          "puntos": 10,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "B",
-          "texto": "Escuchás el perdón en silencio, le decís \"Ya es tarde, no te quiero en mi vida\" y cerrás la puerta.",
-          "puntos": 0,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "C",
-          "texto": "\"Oh... tranqui, ya pasó, pisado.\" (Lo perdonás para que deje de llorar por la incomodidad, pero lo seguís odiando).",
-          "puntos": 5,
-          "es_tibia": true
-        },
-        {
-          "id_opcion": "D",
-          "texto": "Lo mirás llorar, te ponés los auriculares y seguís con tu vida dejándolo arrodillado hablando con el aire.",
-          "puntos": 2,
-          "es_tibia": false
-        },
-        {
-          "id_opcion": "E",
-          "texto": "\"¿Vos llorás? ¿Sabés la cantidad de úlceras y ataques de pánico que me costó lo que hiciste? Mi vida es miseria por tu culpa.\"",
-          "puntos": 7,
-          "es_tibia": false
-        }
+        { "id_opcion": "A", "texto": "\"Te perdoné el día que me heriste. Fuiste solo un maestro disfrazado de oscuridad para despertar mi yo superior.\"", "puntos": 10, "es_tibia": false },
+        { "id_opcion": "B", "texto": "\"¿Vos llorás? ¿Sabés la cantidad de úlceras y ataques de pánico que me costó lo que hiciste? Mi vida es miseria por tu culpa.\"", "puntos": 7, "es_tibia": false },
+        { "id_opcion": "C", "texto": "Escuchás el perdón en silencio, lo mirás fijo, le decís \"Ya es tarde, no te quiero en mi vida\" y le cerrás la puerta.", "puntos": 0, "es_tibia": false },
+        { "id_opcion": "D", "texto": "\"Oh... tranqui, ya pasó, pisado.\" (Lo perdonás solo para que deje de llorar por la incomodidad, pero lo seguís odiando).", "puntos": 5, "es_tibia": true },
+        { "id_opcion": "E", "texto": "Lo mirás llorar en el piso, te ponés los auriculares y seguís con tu vida dejándolo arrodillado hablando con el aire.", "puntos": 2, "es_tibia": true }
       ]
     }
   ],
