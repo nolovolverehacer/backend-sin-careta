@@ -4,7 +4,7 @@ const { Server } = require('socket.io');
 const cors = require('cors');
 
 const TESTS = require('./tests.json'); 
-const FUEGO_CRUZADO = require('./fuego_cruzado.json'); // <- NUEVO ARCHIVO CARGADO
+const FUEGO_CRUZADO = require('./fuego_cruzado.json'); 
 
 const app = express();
 app.use(cors());
@@ -26,13 +26,29 @@ function mezclarArreglo(array) {
   return nuevo;
 }
 
+// Función para repartir medallas al final del juego
+function asignarMedallas(jugadores) {
+  jugadores.forEach(j => {
+    if (j.pinocho) j.medalla = "🤥 PINOCHO DEL GRUPO (Atrapado mintiendo)";
+    else if (j.estadisticas.tibias >= 3) j.medalla = "🐔 REY DE LOS TIBIOS (No se la juega nunca)";
+    else if (j.estadisticas.escrachadoFC >= 1) j.medalla = "🎯 BLANCO FÁCIL (Destrozado por el grupo)";
+    else if (j.estadisticas.aciertosTraidor >= 2) j.medalla = "👁️ MENTALISTA TÓXICO (Lee mentes y roba puntos)";
+    else if (j.estadisticas.falsasDenuncias >= 1) j.medalla = "🤡 DENUNCIANTE TRUCHO (Acusa sin tener pruebas)";
+    else if (j.puntos === 0) j.medalla = "😇 FALSO SANTO (Demasiado perfecto para ser real)";
+    else j.medalla = "🎭 CÓMPLICE SILENCIOSO (Pasó desapercibido)";
+  });
+}
+
 io.on('connection', (socket) => {
   
   socket.on('crear_sala', (data) => {
     const codigo = generarCodigo();
     salas[codigo] = {
       codigo: codigo,
-      jugadores: [{ id: socket.id, nombre: data.nombreUsuario, avatar: data.avatar, puntos: 0, esAnfitrion: true }],
+      jugadores: [{ 
+        id: socket.id, nombre: data.nombreUsuario, avatar: data.avatar, puntos: 0, esAnfitrion: true, pinocho: false, medalla: '',
+        estadisticas: { tibias: 0, falsasDenuncias: 0, escrachadoFC: 0, aciertosTraidor: 0 } 
+      }],
       testActivo: null,
       preguntas: [],
       preguntaActualIndice: 0,
@@ -47,7 +63,10 @@ io.on('connection', (socket) => {
   socket.on('unirse_sala', (data) => {
     const sala = salas[data.codigoSala];
     if (!sala) return socket.emit('error_conexion', { mensaje: 'Sala no encontrada' });
-    sala.jugadores.push({ id: socket.id, nombre: data.nombreUsuario, avatar: data.avatar, puntos: 0, esAnfitrion: false });
+    sala.jugadores.push({ 
+      id: socket.id, nombre: data.nombreUsuario, avatar: data.avatar, puntos: 0, esAnfitrion: false, pinocho: false, medalla: '',
+      estadisticas: { tibias: 0, falsasDenuncias: 0, escrachadoFC: 0, aciertosTraidor: 0 }
+    });
     socket.join(data.codigoSala);
     io.to(data.codigoSala).emit('actualizar_jugadores', { jugadores: sala.jugadores });
   });
@@ -59,7 +78,6 @@ io.on('connection', (socket) => {
     let testSeleccionado = TESTS.find(t => t.id_test === data.idTest);
     sala.testActivo = testSeleccionado;
 
-    // 1. Seleccionar Parte 1 o Parte 2
     let basePreguntas = [];
     if (data.parte === 2) {
       basePreguntas = testSeleccionado.preguntas.slice(15, 30);
@@ -67,14 +85,12 @@ io.on('connection', (socket) => {
       basePreguntas = testSeleccionado.preguntas.slice(0, 15);
     }
 
-    // 2. Inyectar 2 preguntas de FUEGO CRUZADO al azar
     let fcMezcladas = mezclarArreglo(FUEGO_CRUZADO).slice(0, 2);
     let fcParaInsertar = fcMezcladas.map(fc => ({
        texto: "🔥 FUEGO CRUZADO 🔥\n" + fc.texto,
        es_fuego_cruzado: true
     }));
 
-    // Las metemos en la posición 5 y 10 de la partida
     basePreguntas.splice(4, 0, fcParaInsertar[0]);
     basePreguntas.splice(9, 0, fcParaInsertar[1]);
 
@@ -89,13 +105,13 @@ io.on('connection', (socket) => {
     sala.votosJuicio = {};
 
     if (sala.preguntaActualIndice >= sala.preguntas.length) {
+       asignarMedallas(sala.jugadores);
        return io.to(codigoSala).emit('juego_terminado', { jugadores: sala.jugadores, testActivo: sala.testActivo });
     }
 
     let preguntaCruda = sala.preguntas[sala.preguntaActualIndice];
     let preguntaLista;
 
-    // Si es Fuego Cruzado, creamos las opciones usando a los jugadores
     if (preguntaCruda.es_fuego_cruzado) {
         preguntaLista = {
             texto: preguntaCruda.texto,
@@ -103,14 +119,13 @@ io.on('connection', (socket) => {
             numero: sala.preguntaActualIndice + 1,
             total: sala.preguntas.length,
             opciones: sala.jugadores.map(j => ({
-                id_opcion: j.id, // El ID del jugador es la respuesta
+                id_opcion: j.id,
                 texto: `${j.avatar} ${j.nombre}`,
                 puntos: 0, 
                 es_tibia: false
             }))
         };
     } else {
-        // Pregunta normal
         preguntaLista = {
             ...preguntaCruda,
             opciones: mezclarArreglo(preguntaCruda.opciones),
@@ -142,10 +157,8 @@ io.on('connection', (socket) => {
         let revelacion = [];
         let preguntaActual = sala.preguntas[sala.preguntaActualIndice];
         
-        // --- LÓGICA DE FUEGO CRUZADO ---
         if (preguntaActual.es_fuego_cruzado) {
             let conteoVotos = {};
-            
             sala.respuestasRonda.forEach(res => {
                 conteoVotos[res.idOpcion] = (conteoVotos[res.idOpcion] || 0) + 1;
                 let votante = sala.jugadores.find(j => j.id === res.idJugador);
@@ -160,26 +173,30 @@ io.on('connection', (socket) => {
                 });
             });
 
-            // Castigo al más votado
             let maxVotos = 0;
             Object.values(conteoVotos).forEach(v => { if(v > maxVotos) maxVotos = v; });
             
             Object.keys(conteoVotos).forEach(idVotado => {
                 if (conteoVotos[idVotado] === maxVotos) {
                     let victima = sala.jugadores.find(j => j.id === idVotado);
-                    if (victima) victima.puntos += 10; // El escrachado suma 10 pts
+                    if (victima) {
+                      victima.puntos += 10;
+                      victima.estadisticas.escrachadoFC++;
+                    }
                 }
             });
 
         } else {
-            // --- LÓGICA NORMAL DE PREGUNTAS ---
             let totalTibios = 0;
             sala.respuestasRonda.forEach(res => {
                 let jugador = sala.jugadores.find(j => j.id === res.idJugador);
                 let opcion = preguntaActual.opciones.find(o => o.id_opcion === res.idOpcion);
 
                 jugador.puntos += opcion.puntos;
-                if(opcion.es_tibia) totalTibios++;
+                if(opcion.es_tibia) {
+                  totalTibios++;
+                  jugador.estadisticas.tibias++;
+                }
 
                 revelacion.push({
                     idJugador: jugador.id,
@@ -190,7 +207,6 @@ io.on('connection', (socket) => {
                 });
             });
 
-            // MESA DE COBARDES
             let multiplicadorTibio = (totalTibios > sala.jugadores.length / 2) ? 2 : 1;
             if (multiplicadorTibio === 2) {
                 sala.respuestasRonda.forEach(res => {
@@ -202,7 +218,6 @@ io.on('connection', (socket) => {
                 });
             }
 
-            // VOTO TRAIDOR (Robar puntos)
             sala.respuestasRonda.forEach(res => {
                 if (res.prediccion) {
                     let respuestaObjetivo = sala.respuestasRonda.find(r => r.idJugador === res.prediccion.jugadorObjetivoId);
@@ -210,6 +225,7 @@ io.on('connection', (socket) => {
                         let adivinador = sala.jugadores.find(j => j.id === res.idJugador);
                         let victima = sala.jugadores.find(j => j.id === res.prediccion.jugadorObjetivoId);
                         adivinador.puntos = Math.max(0, adivinador.puntos - 2);
+                        adivinador.estadisticas.aciertosTraidor++;
                         victima.puntos += 2;
                     }
                 }
@@ -253,7 +269,10 @@ io.on('connection', (socket) => {
             let acusadoresIds = sala.cuestionamientos[data.idAcusado] || [];
             acusadoresIds.forEach(idAcusador => {
                 let acusador = sala.jugadores.find(j => j.id === idAcusador);
-                if (acusador) acusador.puntos += 5;
+                if (acusador) {
+                  acusador.puntos += 5;
+                  acusador.estadisticas.falsasDenuncias++;
+                }
             });
         }
 
