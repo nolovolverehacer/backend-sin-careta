@@ -26,16 +26,28 @@ function mezclarArreglo(array) {
   return nuevo;
 }
 
-// Función para repartir medallas al final del juego
-function asignarMedallas(jugadores) {
+// Función para repartir medallas de forma dinámica según el largo de la partida
+function asignarMedallas(jugadores, totalPreguntas) {
   jugadores.forEach(j => {
-    if (j.pinocho) j.medalla = "🤥 PINOCHO DEL GRUPO (Atrapado mintiendo)";
-    else if (j.estadisticas.tibias >= 3) j.medalla = "🐔 REY DE LOS TIBIOS (No se la juega nunca)";
-    else if (j.estadisticas.escrachadoFC >= 1) j.medalla = "🎯 BLANCO FÁCIL (Destrozado por el grupo)";
-    else if (j.estadisticas.aciertosTraidor >= 2) j.medalla = "👁️ MENTALISTA TÓXICO (Lee mentes y roba puntos)";
-    else if (j.estadisticas.falsasDenuncias >= 1) j.medalla = "🤡 DENUNCIANTE TRUCHO (Acusa sin tener pruebas)";
-    else if (j.puntos === 0) j.medalla = "😇 FALSO SANTO (Demasiado perfecto para ser real)";
-    else j.medalla = "🎭 CÓMPLICE SILENCIOSO (Pasó desapercibido)";
+    // Calculamos qué porcentaje de tibieza tuvo respecto a la cantidad total de preguntas
+    let porcentajeTibio = j.estadisticas.tibias / totalPreguntas;
+
+    if (j.pinocho) {
+      j.medalla = "🤥 PINOCHO DEL GRUPO (Atrapado mintiendo)";
+    } else if (porcentajeTibio >= 0.2) { 
+      // Si fue tibio en el 20% o más de las preguntas jugadas
+      j.medalla = "🐔 REY DE LOS TIBIOS (No se la juega nunca)";
+    } else if (j.estadisticas.escrachadoFC >= 1) {
+      j.medalla = "🎯 BLANCO FÁCIL (Destrozado por el grupo)";
+    } else if (j.estadisticas.aciertosTraidor >= 2) {
+      j.medalla = "👁️ MENTALISTA TÓXICO (Lee mentes y roba puntos)";
+    } else if (j.estadisticas.falsasDenuncias >= 1) {
+      j.medalla = "🤡 DENUNCIANTE TRUCHO (Acusa sin tener pruebas)";
+    } else if (j.puntos === 0) {
+      j.medalla = "😇 FALSO SANTO (Demasiado perfecto para ser real)";
+    } else {
+      j.medalla = "🎭 CÓMPLICE SILENCIOSO (Pasó desapercibido)";
+    }
   });
 }
 
@@ -105,9 +117,10 @@ io.on('connection', (socket) => {
     sala.votosJuicio = {};
 
     if (sala.preguntaActualIndice >= sala.preguntas.length) {
-       asignarMedallas(sala.jugadores);
-       return io.to(codigoSala).emit('juego_terminado', { jugadores: sala.jugadores, testActivo: sala.testActivo });
-    }
+   // Le pasamos los jugadores Y la cantidad total de preguntas que tuvo esta partida
+   asignarMedallas(sala.jugadores, sala.preguntas.length);
+   return io.to(codigoSala).emit('juego_terminado', { jugadores: sala.jugadores, testActivo: sala.testActivo });
+}
 
     let preguntaCruda = sala.preguntas[sala.preguntaActualIndice];
     let preguntaLista;
