@@ -26,16 +26,19 @@ function mezclarArreglo(array) {
   return nuevo;
 }
 
-// Función para repartir medallas de forma dinámica según el largo de la partida
+// Función para repartir medallas de forma dinámica
 function asignarMedallas(jugadores, totalPreguntas) {
+  // Restamos 2 al total de preguntas porque en Fuego Cruzado no hay opción "tibia"
+  const preguntasRegulares = totalPreguntas > 2 ? totalPreguntas - 2 : totalPreguntas;
+
   jugadores.forEach(j => {
-    // Calculamos qué porcentaje de tibieza tuvo respecto a la cantidad total de preguntas
-    let porcentajeTibio = j.estadisticas.tibias / totalPreguntas;
+    // Calculamos el porcentaje real basado en las preguntas donde SÍ se puede ser tibio
+    let porcentajeTibio = j.estadisticas.tibias / preguntasRegulares;
 
     if (j.pinocho) {
       j.medalla = "🤥 PINOCHO DEL GRUPO (Atrapado mintiendo)";
     } else if (porcentajeTibio >= 0.2) { 
-      // Si fue tibio en el 20% o más de las preguntas jugadas
+      // Si fue tibio en el 20% o más de las preguntas regulares
       j.medalla = "🐔 REY DE LOS TIBIOS (No se la juega nunca)";
     } else if (j.estadisticas.escrachadoFC >= 1) {
       j.medalla = "🎯 BLANCO FÁCIL (Destrozado por el grupo)";
@@ -100,7 +103,8 @@ io.on('connection', (socket) => {
     let fcMezcladas = mezclarArreglo(FUEGO_CRUZADO).slice(0, 2);
     let fcParaInsertar = fcMezcladas.map(fc => ({
        texto: "🔥 FUEGO CRUZADO 🔥\n" + fc.texto,
-       es_fuego_cruzado: true
+       es_fuego_cruzado: true,
+       es_seleccion_jugador: true // Agregado para que el frontend arme los botones con los jugadores
     }));
 
     basePreguntas.splice(4, 0, fcParaInsertar[0]);
@@ -117,10 +121,9 @@ io.on('connection', (socket) => {
     sala.votosJuicio = {};
 
     if (sala.preguntaActualIndice >= sala.preguntas.length) {
-   // Le pasamos los jugadores Y la cantidad total de preguntas que tuvo esta partida
-   asignarMedallas(sala.jugadores, sala.preguntas.length);
-   return io.to(codigoSala).emit('juego_terminado', { jugadores: sala.jugadores, testActivo: sala.testActivo });
-}
+       asignarMedallas(sala.jugadores, sala.preguntas.length);
+       return io.to(codigoSala).emit('juego_terminado', { jugadores: sala.jugadores, testActivo: sala.testActivo });
+    }
 
     let preguntaCruda = sala.preguntas[sala.preguntaActualIndice];
     let preguntaLista;
@@ -129,19 +132,15 @@ io.on('connection', (socket) => {
         preguntaLista = {
             texto: preguntaCruda.texto,
             es_fuego_cruzado: true,
+            es_seleccion_jugador: true, // Avisa al frontend que use los jugadores (sin el jugador actual)
             numero: sala.preguntaActualIndice + 1,
             total: sala.preguntas.length,
-            opciones: sala.jugadores.map(j => ({
-                id_opcion: j.id,
-                texto: `${j.avatar} ${j.nombre}`,
-                puntos: 0, 
-                es_tibia: false
-            }))
+            opciones: [] // El frontend las genera dinámicamente
         };
     } else {
         preguntaLista = {
             ...preguntaCruda,
-            opciones: mezclarArreglo(preguntaCruda.opciones),
+            opciones: preguntaCruda.es_seleccion_jugador ? [] : mezclarArreglo(preguntaCruda.opciones),
             numero: sala.preguntaActualIndice + 1,
             total: sala.preguntas.length
         };
@@ -170,7 +169,7 @@ io.on('connection', (socket) => {
         let revelacion = [];
         let preguntaActual = sala.preguntas[sala.preguntaActualIndice];
         
-        if (preguntaActual.es_fuego_cruzado) {
+        if (preguntaActual.es_fuego_cruzado || preguntaActual.es_seleccion_jugador) {
             let conteoVotos = {};
             sala.respuestasRonda.forEach(res => {
                 conteoVotos[res.idOpcion] = (conteoVotos[res.idOpcion] || 0) + 1;
@@ -186,18 +185,20 @@ io.on('connection', (socket) => {
                 });
             });
 
-            let maxVotos = 0;
-            Object.values(conteoVotos).forEach(v => { if(v > maxVotos) maxVotos = v; });
-            
-            Object.keys(conteoVotos).forEach(idVotado => {
-                if (conteoVotos[idVotado] === maxVotos) {
-                    let victima = sala.jugadores.find(j => j.id === idVotado);
-                    if (victima) {
-                      victima.puntos += 10;
-                      victima.estadisticas.escrachadoFC++;
+            if (preguntaActual.es_fuego_cruzado) {
+                let maxVotos = 0;
+                Object.values(conteoVotos).forEach(v => { if(v > maxVotos) maxVotos = v; });
+                
+                Object.keys(conteoVotos).forEach(idVotado => {
+                    if (conteoVotos[idVotado] === maxVotos) {
+                        let victima = sala.jugadores.find(j => j.id === idVotado);
+                        if (victima) {
+                          victima.puntos += 10;
+                          victima.estadisticas.escrachadoFC++;
+                        }
                     }
-                }
-            });
+                });
+            }
 
         } else {
             let totalTibios = 0;
@@ -205,26 +206,28 @@ io.on('connection', (socket) => {
                 let jugador = sala.jugadores.find(j => j.id === res.idJugador);
                 let opcion = preguntaActual.opciones.find(o => o.id_opcion === res.idOpcion);
 
-                jugador.puntos += opcion.puntos;
-                if(opcion.es_tibia) {
-                  totalTibios++;
-                  jugador.estadisticas.tibias++;
-                }
+                if (opcion) {
+                    jugador.puntos += opcion.puntos;
+                    if(opcion.es_tibia) {
+                      totalTibios++;
+                      jugador.estadisticas.tibias++;
+                    }
 
-                revelacion.push({
-                    idJugador: jugador.id,
-                    nombreJugador: jugador.nombre,
-                    avatar: jugador.avatar,
-                    opcionElegida: opcion,
-                    esTibia: opcion.es_tibia
-                });
+                    revelacion.push({
+                        idJugador: jugador.id,
+                        nombreJugador: jugador.nombre,
+                        avatar: jugador.avatar,
+                        opcionElegida: opcion,
+                        esTibia: opcion.es_tibia
+                    });
+                }
             });
 
             let multiplicadorTibio = (totalTibios > sala.jugadores.length / 2) ? 2 : 1;
             if (multiplicadorTibio === 2) {
                 sala.respuestasRonda.forEach(res => {
                     let opcion = preguntaActual.opciones.find(o => o.id_opcion === res.idOpcion);
-                    if(opcion.es_tibia) {
+                    if(opcion && opcion.es_tibia) {
                         let jugador = sala.jugadores.find(j => j.id === res.idJugador);
                         jugador.puntos += opcion.puntos; 
                     }
@@ -263,6 +266,7 @@ io.on('connection', (socket) => {
 
     sala.votosJuicio[socket.id] = data.voto;
 
+    // Solo verificamos contra jugadores.length - 1 (el acusado no vota)
     if (Object.keys(sala.votosJuicio).length === sala.jugadores.length - 1) {
         let votosCulpable = 0;
         let votosInocente = 0;
@@ -276,8 +280,10 @@ io.on('connection', (socket) => {
 
         if (resultado === 'MINTIO') {
             let acusado = sala.jugadores.find(j => j.id === data.idAcusado);
-            acusado.puntos += 10;
-            acusado.pinocho = true;
+            if (acusado) {
+                acusado.puntos += 10;
+                acusado.pinocho = true;
+            }
         } else {
             let acusadoresIds = sala.cuestionamientos[data.idAcusado] || [];
             acusadoresIds.forEach(idAcusador => {
@@ -293,7 +299,10 @@ io.on('connection', (socket) => {
     }
   });
 
-  socket.on('disconnect', () => {});
+  socket.on('disconnect', () => {
+      // Por ahora la lógica de desconexión queda vacía, 
+      // pero tené en cuenta que si alguien se sale en medio de una votación, el juego podría trabarse.
+  });
 });
 
 const PORT = process.env.PORT || 3001;
