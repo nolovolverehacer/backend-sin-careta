@@ -26,19 +26,19 @@ function mezclarArreglo(array) {
   return nuevo;
 }
 
-// Función para repartir medallas de forma dinámica
+// Asignación de medallas dinámica según preguntas reales jugadas
 function asignarMedallas(jugadores, totalPreguntas) {
-  // Restamos 2 al total de preguntas porque en Fuego Cruzado no hay opción "tibia"
-  const preguntasRegulares = totalPreguntas > 2 ? totalPreguntas - 2 : totalPreguntas;
+  // Las preguntas regulares son el total menos las 2 de Fuego Cruzado
+  const preguntasEstandar = totalPreguntas > 2 ? totalPreguntas - 2 : totalPreguntas;
 
   jugadores.forEach(j => {
-    // Calculamos el porcentaje real basado en las preguntas donde SÍ se puede ser tibio
-    let porcentajeTibio = j.estadisticas.tibias / preguntasRegulares;
+    // Porcentaje sobre preguntas regulares donde sí existen opciones 'tibias'
+    let porcentajeTibio = j.estadisticas.tibias / preguntasEstandar;
 
     if (j.pinocho) {
       j.medalla = "🤥 PINOCHO DEL GRUPO (Atrapado mintiendo)";
-    } else if (porcentajeTibio >= 0.2) { 
-      // Si fue tibio en el 20% o más de las preguntas regulares
+    } else if (porcentajeTibio >= 0.20) { 
+      // 20% o más de respuestas tibias
       j.medalla = "🐔 REY DE LOS TIBIOS (No se la juega nunca)";
     } else if (j.estadisticas.escrachadoFC >= 1) {
       j.medalla = "🎯 BLANCO FÁCIL (Destrozado por el grupo)";
@@ -103,13 +103,13 @@ io.on('connection', (socket) => {
     let fcMezcladas = mezclarArreglo(FUEGO_CRUZADO).slice(0, 2);
     let fcParaInsertar = fcMezcladas.map(fc => ({
        texto: "🔥 FUEGO CRUZADO 🔥\n" + fc.texto,
-       es_fuego_cruzado: true,
-       es_seleccion_jugador: true // Agregado para que el frontend arme los botones con los jugadores
+       es_fuego_cruzado: true
     }));
 
     basePreguntas.splice(4, 0, fcParaInsertar[0]);
     basePreguntas.splice(9, 0, fcParaInsertar[1]);
 
+    // La lista final tiene exactamente 17 preguntas
     sala.preguntas = basePreguntas;
     io.to(data.codigoSala).emit('pantalla_reglas');
   });
@@ -132,17 +132,16 @@ io.on('connection', (socket) => {
         preguntaLista = {
             texto: preguntaCruda.texto,
             es_fuego_cruzado: true,
-            es_seleccion_jugador: true, // Avisa al frontend que use los jugadores (sin el jugador actual)
             numero: sala.preguntaActualIndice + 1,
-            total: sala.preguntas.length,
-            opciones: [] // El frontend las genera dinámicamente
+            total: sala.preguntas.length, // Enviará 17
+            opciones: []
         };
     } else {
         preguntaLista = {
             ...preguntaCruda,
-            opciones: preguntaCruda.es_seleccion_jugador ? [] : mezclarArreglo(preguntaCruda.opciones),
+            opciones: mezclarArreglo(preguntaCruda.opciones),
             numero: sala.preguntaActualIndice + 1,
-            total: sala.preguntas.length
+            total: sala.preguntas.length // Enviará 17
         };
     }
 
@@ -169,7 +168,7 @@ io.on('connection', (socket) => {
         let revelacion = [];
         let preguntaActual = sala.preguntas[sala.preguntaActualIndice];
         
-        if (preguntaActual.es_fuego_cruzado || preguntaActual.es_seleccion_jugador) {
+        if (preguntaActual.es_fuego_cruzado) {
             let conteoVotos = {};
             sala.respuestasRonda.forEach(res => {
                 conteoVotos[res.idOpcion] = (conteoVotos[res.idOpcion] || 0) + 1;
@@ -185,20 +184,18 @@ io.on('connection', (socket) => {
                 });
             });
 
-            if (preguntaActual.es_fuego_cruzado) {
-                let maxVotos = 0;
-                Object.values(conteoVotos).forEach(v => { if(v > maxVotos) maxVotos = v; });
-                
-                Object.keys(conteoVotos).forEach(idVotado => {
-                    if (conteoVotos[idVotado] === maxVotos) {
-                        let victima = sala.jugadores.find(j => j.id === idVotado);
-                        if (victima) {
-                          victima.puntos += 10;
-                          victima.estadisticas.escrachadoFC++;
-                        }
+            let maxVotos = 0;
+            Object.values(conteoVotos).forEach(v => { if(v > maxVotos) maxVotos = v; });
+            
+            Object.keys(conteoVotos).forEach(idVotado => {
+                if (conteoVotos[idVotado] === maxVotos) {
+                    let victima = sala.jugadores.find(j => j.id === idVotado);
+                    if (victima) {
+                      victima.puntos += 10;
+                      victima.estadisticas.escrachadoFC++;
                     }
-                });
-            }
+                }
+            });
 
         } else {
             let totalTibios = 0;
@@ -240,9 +237,11 @@ io.on('connection', (socket) => {
                     if (respuestaObjetivo && respuestaObjetivo.idOpcion === res.prediccion.opcionAdivinadaId) {
                         let adivinador = sala.jugadores.find(j => j.id === res.idJugador);
                         let victima = sala.jugadores.find(j => j.id === res.prediccion.jugadorObjetivoId);
-                        adivinador.puntos = Math.max(0, adivinador.puntos - 2);
-                        adivinador.estadisticas.aciertosTraidor++;
-                        victima.puntos += 2;
+                        if (adivinador && victima) {
+                            adivinador.puntos = Math.max(0, adivinador.puntos - 2);
+                            adivinador.estadisticas.aciertosTraidor++;
+                            victima.puntos += 2;
+                        }
                     }
                 }
             });
@@ -266,7 +265,6 @@ io.on('connection', (socket) => {
 
     sala.votosJuicio[socket.id] = data.voto;
 
-    // Solo verificamos contra jugadores.length - 1 (el acusado no vota)
     if (Object.keys(sala.votosJuicio).length === sala.jugadores.length - 1) {
         let votosCulpable = 0;
         let votosInocente = 0;
@@ -299,10 +297,7 @@ io.on('connection', (socket) => {
     }
   });
 
-  socket.on('disconnect', () => {
-      // Por ahora la lógica de desconexión queda vacía, 
-      // pero tené en cuenta que si alguien se sale en medio de una votación, el juego podría trabarse.
-  });
+  socket.on('disconnect', () => {});
 });
 
 const PORT = process.env.PORT || 3001;
