@@ -3,8 +3,8 @@ const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
 
-// IMPORTANTE: Asegurate de que el nombre coincida con tu archivo de preguntas
 const TESTS = require('./tests.json'); 
+const FUEGO_CRUZADO = require('./fuego_cruzado.json'); // <- NUEVO ARCHIVO CARGADO
 
 const app = express();
 app.use(cors());
@@ -17,7 +17,6 @@ function generarCodigo() {
   return Math.random().toString(36).substring(2, 6).toUpperCase();
 }
 
-// Esta es la función que mezcla las opciones para que no se las memoricen
 function mezclarArreglo(array) {
   let nuevo = [...array];
   for (let i = nuevo.length - 1; i > 0; i--) {
@@ -28,7 +27,7 @@ function mezclarArreglo(array) {
 }
 
 io.on('connection', (socket) => {
-  // 1. Crear Sala
+  
   socket.on('crear_sala', (data) => {
     const codigo = generarCodigo();
     salas[codigo] = {
@@ -45,7 +44,6 @@ io.on('connection', (socket) => {
     socket.emit('sala_creada', { codigoSala: codigo, jugadores: salas[codigo].jugadores });
   });
 
-  // 2. Unirse Sala
   socket.on('unirse_sala', (data) => {
     const sala = salas[data.codigoSala];
     if (!sala) return socket.emit('error_conexion', { mensaje: 'Sala no encontrada' });
@@ -54,7 +52,6 @@ io.on('connection', (socket) => {
     io.to(data.codigoSala).emit('actualizar_jugadores', { jugadores: sala.jugadores });
   });
 
-  // 3. Preparar Juego (Acá dividimos Parte 1 y Parte 2)
   socket.on('preparar_juego', (data) => {
     const sala = salas[data.codigoSala];
     if (!sala) return;
@@ -62,50 +59,75 @@ io.on('connection', (socket) => {
     let testSeleccionado = TESTS.find(t => t.id_test === data.idTest);
     sala.testActivo = testSeleccionado;
 
-    // Si desde el Frontend nos piden la Parte 2, recortamos de la 15 a la 30.
-    // Si no, recortamos de la 0 a la 15 (Parte 1).
+    // 1. Seleccionar Parte 1 o Parte 2
+    let basePreguntas = [];
     if (data.parte === 2) {
-      sala.preguntas = testSeleccionado.preguntas.slice(15, 30);
+      basePreguntas = testSeleccionado.preguntas.slice(15, 30);
     } else {
-      sala.preguntas = testSeleccionado.preguntas.slice(0, 15);
+      basePreguntas = testSeleccionado.preguntas.slice(0, 15);
     }
 
+    // 2. Inyectar 2 preguntas de FUEGO CRUZADO al azar
+    let fcMezcladas = mezclarArreglo(FUEGO_CRUZADO).slice(0, 2);
+    let fcParaInsertar = fcMezcladas.map(fc => ({
+       texto: "🔥 FUEGO CRUZADO 🔥\n" + fc.texto,
+       es_fuego_cruzado: true
+    }));
+
+    // Las metemos en la posición 5 y 10 de la partida
+    basePreguntas.splice(4, 0, fcParaInsertar[0]);
+    basePreguntas.splice(9, 0, fcParaInsertar[1]);
+
+    sala.preguntas = basePreguntas;
     io.to(data.codigoSala).emit('pantalla_reglas');
   });
 
-  // 4. Iniciar / Siguiente Pregunta
   const enviarNuevaPregunta = (codigoSala) => {
     const sala = salas[codigoSala];
     sala.respuestasRonda = [];
     sala.cuestionamientos = {};
     sala.votosJuicio = {};
 
-    // Si llegamos al final de la parte (15 preguntas), termina el juego
     if (sala.preguntaActualIndice >= sala.preguntas.length) {
        return io.to(codigoSala).emit('juego_terminado', { jugadores: sala.jugadores, testActivo: sala.testActivo });
     }
 
     let preguntaCruda = sala.preguntas[sala.preguntaActualIndice];
+    let preguntaLista;
 
-    // ACÁ SE MEZCLAN LAS OPCIONES: Todos ven las mismas opciones pero en distinto orden cada vez que juegan
-    let preguntaLista = {
-        ...preguntaCruda,
-        opciones: mezclarArreglo(preguntaCruda.opciones),
-        numero: sala.preguntaActualIndice + 1,
-        total: sala.preguntas.length
-    };
+    // Si es Fuego Cruzado, creamos las opciones usando a los jugadores
+    if (preguntaCruda.es_fuego_cruzado) {
+        preguntaLista = {
+            texto: preguntaCruda.texto,
+            es_fuego_cruzado: true,
+            numero: sala.preguntaActualIndice + 1,
+            total: sala.preguntas.length,
+            opciones: sala.jugadores.map(j => ({
+                id_opcion: j.id, // El ID del jugador es la respuesta
+                texto: `${j.avatar} ${j.nombre}`,
+                puntos: 0, 
+                es_tibia: false
+            }))
+        };
+    } else {
+        // Pregunta normal
+        preguntaLista = {
+            ...preguntaCruda,
+            opciones: mezclarArreglo(preguntaCruda.opciones),
+            numero: sala.preguntaActualIndice + 1,
+            total: sala.preguntas.length
+        };
+    }
 
     io.to(codigoSala).emit('nueva_pregunta', { pregunta: preguntaLista });
   };
 
   socket.on('iniciar_juego', (data) => enviarNuevaPregunta(data.codigoSala));
-  
   socket.on('siguiente_pregunta', (data) => {
       salas[data.codigoSala].preguntaActualIndice++;
       enviarNuevaPregunta(data.codigoSala);
   });
 
-  // 5. Recibir Respuestas y Procesar Matemáticas Tóxicas
   socket.on('enviar_respuesta', (data) => {
     const sala = salas[data.codigoSala];
     if (!sala) return;
@@ -119,66 +141,93 @@ io.on('connection', (socket) => {
     if (sala.respuestasRonda.length === sala.jugadores.length) {
         let revelacion = [];
         let preguntaActual = sala.preguntas[sala.preguntaActualIndice];
-        let totalTibios = 0;
-
-        sala.respuestasRonda.forEach(res => {
-            let jugador = sala.jugadores.find(j => j.id === res.idJugador);
-            let opcion = preguntaActual.opciones.find(o => o.id_opcion === res.idOpcion);
-
-            jugador.puntos += opcion.puntos;
-            if(opcion.es_tibia) totalTibios++;
-
-            revelacion.push({
-                idJugador: jugador.id,
-                nombreJugador: jugador.nombre,
-                avatar: jugador.avatar,
-                opcionElegida: opcion,
-                esTibia: opcion.es_tibia
-            });
-        });
-
-        // MESA DE COBARDES
-        let multiplicadorTibio = (totalTibios > sala.jugadores.length / 2) ? 2 : 1;
-        if (multiplicadorTibio === 2) {
+        
+        // --- LÓGICA DE FUEGO CRUZADO ---
+        if (preguntaActual.es_fuego_cruzado) {
+            let conteoVotos = {};
+            
             sala.respuestasRonda.forEach(res => {
+                conteoVotos[res.idOpcion] = (conteoVotos[res.idOpcion] || 0) + 1;
+                let votante = sala.jugadores.find(j => j.id === res.idJugador);
+                let votado = sala.jugadores.find(j => j.id === res.idOpcion);
+                
+                revelacion.push({
+                    idJugador: votante.id,
+                    nombreJugador: votante.nombre,
+                    avatar: votante.avatar,
+                    opcionElegida: { texto: votado ? `Votó a: ${votado.avatar} ${votado.nombre}` : 'Alguien' },
+                    esTibia: false
+                });
+            });
+
+            // Castigo al más votado
+            let maxVotos = 0;
+            Object.values(conteoVotos).forEach(v => { if(v > maxVotos) maxVotos = v; });
+            
+            Object.keys(conteoVotos).forEach(idVotado => {
+                if (conteoVotos[idVotado] === maxVotos) {
+                    let victima = sala.jugadores.find(j => j.id === idVotado);
+                    if (victima) victima.puntos += 10; // El escrachado suma 10 pts
+                }
+            });
+
+        } else {
+            // --- LÓGICA NORMAL DE PREGUNTAS ---
+            let totalTibios = 0;
+            sala.respuestasRonda.forEach(res => {
+                let jugador = sala.jugadores.find(j => j.id === res.idJugador);
                 let opcion = preguntaActual.opciones.find(o => o.id_opcion === res.idOpcion);
-                if(opcion.es_tibia) {
-                    let jugador = sala.jugadores.find(j => j.id === res.idJugador);
-                    jugador.puntos += opcion.puntos; 
+
+                jugador.puntos += opcion.puntos;
+                if(opcion.es_tibia) totalTibios++;
+
+                revelacion.push({
+                    idJugador: jugador.id,
+                    nombreJugador: jugador.nombre,
+                    avatar: jugador.avatar,
+                    opcionElegida: opcion,
+                    esTibia: opcion.es_tibia
+                });
+            });
+
+            // MESA DE COBARDES
+            let multiplicadorTibio = (totalTibios > sala.jugadores.length / 2) ? 2 : 1;
+            if (multiplicadorTibio === 2) {
+                sala.respuestasRonda.forEach(res => {
+                    let opcion = preguntaActual.opciones.find(o => o.id_opcion === res.idOpcion);
+                    if(opcion.es_tibia) {
+                        let jugador = sala.jugadores.find(j => j.id === res.idJugador);
+                        jugador.puntos += opcion.puntos; 
+                    }
+                });
+            }
+
+            // VOTO TRAIDOR (Robar puntos)
+            sala.respuestasRonda.forEach(res => {
+                if (res.prediccion) {
+                    let respuestaObjetivo = sala.respuestasRonda.find(r => r.idJugador === res.prediccion.jugadorObjetivoId);
+                    if (respuestaObjetivo && respuestaObjetivo.idOpcion === res.prediccion.opcionAdivinadaId) {
+                        let adivinador = sala.jugadores.find(j => j.id === res.idJugador);
+                        let victima = sala.jugadores.find(j => j.id === res.prediccion.jugadorObjetivoId);
+                        adivinador.puntos = Math.max(0, adivinador.puntos - 2);
+                        victima.puntos += 2;
+                    }
                 }
             });
         }
-
-        // VOTO TRAIDOR (Robar puntos)
-        sala.respuestasRonda.forEach(res => {
-            if (res.prediccion) {
-                let respuestaObjetivo = sala.respuestasRonda.find(r => r.idJugador === res.prediccion.jugadorObjetivoId);
-                if (respuestaObjetivo && respuestaObjetivo.idOpcion === res.prediccion.opcionAdivinadaId) {
-                    let adivinador = sala.jugadores.find(j => j.id === res.idJugador);
-                    let victima = sala.jugadores.find(j => j.id === res.prediccion.jugadorObjetivoId);
-
-                    adivinador.puntos = Math.max(0, adivinador.puntos - 2);
-                    victima.puntos += 2;
-                }
-            }
-        });
 
         io.to(data.codigoSala).emit('mostrar_revelacion', { revelacion, jugadores: sala.jugadores });
     }
   });
 
-  // 6. Botón Mentira (Bala de Plata)
   socket.on('cuestionar_jugador', (data) => {
     const sala = salas[data.codigoSala];
     if (!sala) return;
-    
     sala.cuestionamientos[data.idJugadorAcusado] = sala.cuestionamientos[data.idJugadorAcusado] || [];
     sala.cuestionamientos[data.idJugadorAcusado].push(socket.id);
-
     io.to(data.codigoSala).emit('actualizar_cuestionamientos', { cuestionamientos: sala.cuestionamientos });
   });
 
-  // 7. Votación del Tribunal y Falsas Denuncias
   socket.on('votar_juicio', (data) => {
     const sala = salas[data.codigoSala];
     if (!sala) return;
