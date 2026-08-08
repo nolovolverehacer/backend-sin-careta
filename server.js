@@ -13,8 +13,9 @@ const io = new Server(server, { cors: { origin: "*" } });
 
 const salas = {};
 
-// 60s del cliente + 5s de margen de red/latencia
-const TIEMPO_PREGUNTA_MS = 65000;
+const TIEMPO_PREGUNTA_MS = 65000;          // 60s del cliente + 5s de margen
+const TIEMPO_JUICIO_MS = 35000;            // 30s del cliente + 5s de margen
+const TIEMPO_GRACIA_DESCONEXION_MS = 90000; // tiempo para reconectarse antes de sacarlo de la sala
 
 function generarCodigo() {
   return Math.random().toString(36).substring(2, 6).toUpperCase();
@@ -29,9 +30,28 @@ function mezclarArreglo(array) {
   return nuevo;
 }
 
-// Asignación de medallas dinámica según preguntas reales jugadas
-function asignarMedallas(jugadores, totalPreguntas) {
-  const preguntasEstandar = totalPreguntas > 2 ? totalPreguntas - 2 : totalPreguntas;
+// Arma un bloque de 15 preguntas normales + 2 de Fuego Cruzado insertadas en
+// las posiciones 5 y 10 (relativas a ESE bloque). Se usa tanto para el
+// arranque del juego como para la extensión a 30.
+function construirBloqueDePreguntas(test, parte) {
+  let base = parte === 2 ? test.preguntas.slice(15, 30) : test.preguntas.slice(0, 15);
+  base = [...base];
+
+  let fcMezcladas = mezclarArreglo(FUEGO_CRUZADO).slice(0, 2);
+  let fcParaInsertar = fcMezcladas.map(fc => ({
+     texto: "🔥 FUEGO CRUZADO 🔥\n" + fc.texto,
+     es_fuego_cruzado: true
+  }));
+
+  base.splice(4, 0, fcParaInsertar[0]);
+  base.splice(9, 0, fcParaInsertar[1]);
+  return base;
+}
+
+function asignarMedallas(jugadores, totalPreguntas, totalFuegoCruzado) {
+  const preguntasEstandar = (totalPreguntas - totalFuegoCruzado) > 0
+    ? totalPreguntas - totalFuegoCruzado
+    : totalPreguntas;
 
   jugadores.forEach(j => {
     let porcentajeTibio = j.estadisticas.tibias / preguntasEstandar;
@@ -54,11 +74,25 @@ function asignarMedallas(jugadores, totalPreguntas) {
   });
 }
 
-function limpiarTimerPregunta(sala) {
-  if (sala.timerPregunta) {
-    clearTimeout(sala.timerPregunta);
-    sala.timerPregunta = null;
-  }
+function limpiarTimers(sala) {
+  if (sala.timerPregunta) { clearTimeout(sala.timerPregunta); sala.timerPregunta = null; }
+  if (sala.timerJuicio) { clearTimeout(sala.timerJuicio); sala.timerJuicio = null; }
+}
+
+function esAnfitrionValido(sala, socketId) {
+  return sala.jugadores.some(j => j.id === socketId && j.esAnfitrion);
+}
+
+function contarJugadoresConectados(sala) {
+  return sala.jugadores.filter(j => j.conectado !== false).length;
+}
+
+// Opciones de Fuego Cruzado: solo jugadores actualmente conectados, para no
+// ofrecer como "objetivo" a alguien que está en período de gracia.
+function opcionesFuegoCruzado(sala) {
+  return sala.jugadores
+    .filter(j => j.conectado !== false)
+    .map(j => ({ id_opcion: j.id, texto: `${j.avatar} ${j.nombre}` }));
 }
 
 io.on('connection', (socket) => {
@@ -69,76 +103,139 @@ io.on('connection', (socket) => {
       codigo: codigo,
       jugadores: [{
         id: socket.id, nombre: data.nombreUsuario, avatar: data.avatar, puntos: 0, esAnfitrion: true, pinocho: false, medalla: '',
+        conectado: true, token: data.token || null,
         estadisticas: { tibias: 0, falsasDenuncias: 0, escrachadoFC: 0, aciertosTraidor: 0 }
       }],
       testActivo: null,
+      parteInicial: null,
+      extendida: false,
+      totalFuegoCruzado: 0,
       preguntas: [],
       preguntaActualIndice: 0,
       respuestasRonda: [],
       cuestionamientos: {},
       votosJuicio: {},
       idAcusadoActual: null,
-      timerPregunta: null
+      timerPregunta: null,
+      timerJuicio: null,
+      timersDesconexion: {}
     };
     socket.join(codigo);
     socket.emit('sala_creada', { codigoSala: codigo, jugadores: salas[codigo].jugadores });
+    console.log(`[${codigo}] Sala creada por ${data.nombreUsuario}`);
   });
 
   socket.on('unirse_sala', (data) => {
     const sala = salas[data.codigoSala];
     if (!sala) return socket.emit('error_conexion', { mensaje: 'Sala no encontrada' });
-    sala.jugadores.push({
-      id: socket.id, nombre: data.nombreUsuario, avatar: data.avatar, puntos: 0, esAnfitrion: false, pinocho: false, medalla: '',
-      estadisticas: { tibias: 0, falsasDenuncias: 0, escrachadoFC: 0, aciertosTraidor: 0 }
-    });
+
+    let existente = null;
+    if (data.token) {
+      existente = sala.jugadores.find(j => j.token && j.token === data.token);
+    }
+    if (!existente) {
+      const nombreNormalizado = (data.nombreUsuario || '').trim().toLowerCase();
+      existente = sala.jugadores.find(j => j.nombre.trim().toLowerCase() === nombreNormalizado);
+    }
+
+    if (existente) {
+      // Reconexión (por token si lo hay, o por nombre como respaldo).
+      const idAnterior = existente.id;
+
+      if (sala.timersDesconexion[idAnterior]) {
+        clearTimeout(sala.timersDesconexion[idAnterior]);
+        delete sala.timersDesconexion[idAnterior];
+      }
+
+      existente.id = socket.id;
+      existente.conectado = true;
+      if (data.avatar) existente.avatar = data.avatar;
+      if (data.token) existente.token = data.token;
+
+      sala.respuestasRonda.forEach(r => { if (r.idJugador === idAnterior) r.idJugador = socket.id; });
+      Object.keys(sala.cuestionamientos).forEach(key => {
+        sala.cuestionamientos[key] = sala.cuestionamientos[key].map(id => id === idAnterior ? socket.id : id);
+      });
+      if (sala.cuestionamientos[idAnterior]) {
+        sala.cuestionamientos[socket.id] = sala.cuestionamientos[idAnterior];
+        delete sala.cuestionamientos[idAnterior];
+      }
+      if (sala.votosJuicio[idAnterior] !== undefined) {
+        sala.votosJuicio[socket.id] = sala.votosJuicio[idAnterior];
+        delete sala.votosJuicio[idAnterior];
+      }
+      if (sala.idAcusadoActual === idAnterior) sala.idAcusadoActual = socket.id;
+
+      console.log(`[${data.codigoSala}] ${existente.nombre} se reconectó`);
+    } else {
+      sala.jugadores.push({
+        id: socket.id, nombre: data.nombreUsuario, avatar: data.avatar, puntos: 0, esAnfitrion: false, pinocho: false, medalla: '',
+        conectado: true, token: data.token || null,
+        estadisticas: { tibias: 0, falsasDenuncias: 0, escrachadoFC: 0, aciertosTraidor: 0 }
+      });
+      console.log(`[${data.codigoSala}] ${data.nombreUsuario} se unió`);
+    }
+
     socket.join(data.codigoSala);
     io.to(data.codigoSala).emit('actualizar_jugadores', { jugadores: sala.jugadores });
+    intentarCerrarRondaSiCorresponde(data.codigoSala);
   });
 
   socket.on('preparar_juego', (data) => {
     const sala = salas[data.codigoSala];
     if (!sala) return;
-
-    let testSeleccionado = TESTS.find(t => t.id_test === data.idTest);
-    sala.testActivo = testSeleccionado;
-
-    let basePreguntas = [];
-    if (data.parte === 2) {
-      basePreguntas = testSeleccionado.preguntas.slice(15, 30);
-    } else {
-      basePreguntas = testSeleccionado.preguntas.slice(0, 15);
+    if (!esAnfitrionValido(sala, socket.id)) {
+      return socket.emit('error_conexion', { mensaje: 'Solo el anfitrión puede iniciar el juego.' });
+    }
+    if (sala.jugadores.length < 2) {
+      return socket.emit('error_conexion', { mensaje: 'Necesitás al menos 2 jugadores para empezar.' });
     }
 
-    let fcMezcladas = mezclarArreglo(FUEGO_CRUZADO).slice(0, 2);
-    let fcParaInsertar = fcMezcladas.map(fc => ({
-       texto: "🔥 FUEGO CRUZADO 🔥\n" + fc.texto,
-       es_fuego_cruzado: true
-    }));
+    let testSeleccionado = TESTS.find(t => t.id_test === data.idTest);
+    if (!testSeleccionado) {
+      return socket.emit('error_conexion', { mensaje: 'Ese test no existe.' });
+    }
 
-    basePreguntas.splice(4, 0, fcParaInsertar[0]);
-    basePreguntas.splice(9, 0, fcParaInsertar[1]);
+    sala.testActivo = testSeleccionado;
+    sala.parteInicial = data.parte;
+    sala.extendida = false;
+    sala.preguntas = construirBloqueDePreguntas(testSeleccionado, data.parte);
+    sala.totalFuegoCruzado = 2;
 
-    sala.preguntas = basePreguntas;
-    io.to(data.codigoSala).emit('pantalla_reglas');
+    io.to(data.codigoSala).emit('pantalla_reglas', { testActivo: sala.testActivo, parte: data.parte });
   });
 
   const enviarNuevaPregunta = (codigoSala) => {
     const sala = salas[codigoSala];
     if (!sala) return;
 
-    limpiarTimerPregunta(sala);
+    limpiarTimers(sala);
     sala.respuestasRonda = [];
     sala.cuestionamientos = {};
     sala.votosJuicio = {};
     sala.idAcusadoActual = null;
 
     if (sala.preguntaActualIndice >= sala.preguntas.length) {
-       asignarMedallas(sala.jugadores, sala.preguntas.length);
-       return io.to(codigoSala).emit('juego_terminado', { jugadores: sala.jugadores, testActivo: sala.testActivo });
+       asignarMedallas(sala.jugadores, sala.preguntas.length, sala.totalFuegoCruzado);
+       return io.to(codigoSala).emit('juego_terminado', {
+         jugadores: sala.jugadores,
+         testActivo: sala.testActivo,
+         parteInicial: sala.parteInicial,
+         extendida: sala.extendida
+       });
     }
 
     let preguntaCruda = sala.preguntas[sala.preguntaActualIndice];
     let preguntaLista;
+
+    const esUltimaDelBloque = sala.preguntaActualIndice === sala.preguntas.length - 1;
+    const finDeBloque = esUltimaDelBloque && !sala.extendida;
+
+    const infoJuego = {
+      idTest: sala.testActivo ? sala.testActivo.id_test : null,
+      parteInicial: sala.parteInicial,
+      extendida: sala.extendida
+    };
 
     if (preguntaCruda.es_fuego_cruzado) {
         preguntaLista = {
@@ -146,32 +243,29 @@ io.on('connection', (socket) => {
             es_fuego_cruzado: true,
             numero: sala.preguntaActualIndice + 1,
             total: sala.preguntas.length,
-            // El servidor genera las opciones (los jugadores de la sala) para
-            // que el id_opcion que vuelva por 'enviar_respuesta' sea siempre
-            // válido y consistente con el estado real del servidor.
-            opciones: sala.jugadores.map(j => ({ id_opcion: j.id, texto: `${j.avatar} ${j.nombre}` }))
+            fin_de_bloque: finDeBloque,
+            opciones: opcionesFuegoCruzado(sala),
+            ...infoJuego
         };
     } else {
         preguntaLista = {
             ...preguntaCruda,
             opciones: mezclarArreglo(preguntaCruda.opciones),
             numero: sala.preguntaActualIndice + 1,
-            total: sala.preguntas.length
+            total: sala.preguntas.length,
+            fin_de_bloque: finDeBloque,
+            ...infoJuego
         };
     }
 
     io.to(codigoSala).emit('nueva_pregunta', { pregunta: preguntaLista });
+    console.log(`[${codigoSala}] Pregunta ${preguntaLista.numero}/${preguntaLista.total} ${preguntaLista.es_fuego_cruzado ? '(FUEGO CRUZADO)' : ''}`);
 
-    // Respaldo del lado servidor: si algún celular se queda sin timer
-    // (pantalla bloqueada, app en segundo plano, conexión caída), la sala
-    // no debe quedar esperándolo para siempre.
     sala.timerPregunta = setTimeout(() => {
       completarRespuestasFaltantes(codigoSala);
     }, TIEMPO_PREGUNTA_MS);
   };
 
-  // Completa con una respuesta al azar a cualquier jugador que todavía no
-  // haya respondido cuando se cumple el timeout de respaldo.
   function completarRespuestasFaltantes(codigoSala) {
     const sala = salas[codigoSala];
     if (!sala) return;
@@ -181,36 +275,60 @@ io.on('connection', (socket) => {
 
     const idsQueYaRespondieron = new Set(sala.respuestasRonda.map(r => r.idJugador));
     const opcionesValidas = preguntaActual.es_fuego_cruzado
-      ? sala.jugadores.map(j => ({ id_opcion: j.id }))
+      ? sala.jugadores.filter(j => j.conectado !== false).map(j => ({ id_opcion: j.id }))
       : preguntaActual.opciones;
 
     sala.jugadores.forEach(j => {
+      if (j.conectado === false) return; // no forzamos respuesta a alguien desconectado
       if (idsQueYaRespondieron.has(j.id)) return;
       if (!opcionesValidas || opcionesValidas.length === 0) return;
       const azar = opcionesValidas[Math.floor(Math.random() * opcionesValidas.length)];
       sala.respuestasRonda.push({ idJugador: j.id, idOpcion: azar.id_opcion, prediccion: null });
     });
 
+    console.log(`[${codigoSala}] Timer de respaldo disparado en pregunta ${sala.preguntaActualIndice + 1}`);
     finalizarRonda(codigoSala);
   }
 
-  socket.on('iniciar_juego', (data) => enviarNuevaPregunta(data.codigoSala));
+  socket.on('iniciar_juego', (data) => {
+    const sala = salas[data.codigoSala];
+    if (!sala) return;
+    if (!esAnfitrionValido(sala, socket.id)) return;
+    enviarNuevaPregunta(data.codigoSala);
+  });
+
   socket.on('siguiente_pregunta', (data) => {
       const sala = salas[data.codigoSala];
       if (!sala) return;
+      if (!esAnfitrionValido(sala, socket.id)) return;
       sala.preguntaActualIndice++;
       enviarNuevaPregunta(data.codigoSala);
   });
 
-  // Procesa la ronda completa (todos respondieron, o se forzó el cierre por
-  // timeout/desconexión) y emite 'mostrar_revelacion'. Separada de
-  // 'enviar_respuesta' para poder reusarla desde el timer de respaldo y
-  // desde el manejo de disconnect.
+  socket.on('extender_ronda', (data) => {
+    const sala = salas[data.codigoSala];
+    if (!sala) return;
+    if (!esAnfitrionValido(sala, socket.id)) return;
+    if (sala.extendida) return;
+
+    const otraParte = sala.parteInicial === 2 ? 1 : 2;
+    const bloqueExtra = construirBloqueDePreguntas(sala.testActivo, otraParte);
+
+    sala.preguntas = [...sala.preguntas, ...bloqueExtra];
+    sala.totalFuegoCruzado += 2;
+    sala.extendida = true;
+
+    console.log(`[${data.codigoSala}] Ronda extendida: ${sala.preguntas.length} preguntas en total`);
+
+    sala.preguntaActualIndice++;
+    enviarNuevaPregunta(data.codigoSala);
+  });
+
   function finalizarRonda(codigoSala) {
     const sala = salas[codigoSala];
     if (!sala) return;
 
-    limpiarTimerPregunta(sala);
+    limpiarTimers(sala);
 
     let revelacion = [];
     let preguntaActual = sala.preguntas[sala.preguntaActualIndice];
@@ -222,7 +340,7 @@ io.on('connection', (socket) => {
             conteoVotos[res.idOpcion] = (conteoVotos[res.idOpcion] || 0) + 1;
             let votante = sala.jugadores.find(j => j.id === res.idJugador);
             let votado = sala.jugadores.find(j => j.id === res.idOpcion);
-            if (!votante) return; // se desconectó justo después de responder
+            if (!votante) return;
 
             revelacion.push({
                 idJugador: votante.id,
@@ -298,12 +416,23 @@ io.on('connection', (socket) => {
     io.to(codigoSala).emit('mostrar_revelacion', { revelacion, jugadores: sala.jugadores });
   }
 
+  function intentarCerrarRondaSiCorresponde(codigoSala) {
+    const sala = salas[codigoSala];
+    if (!sala) return;
+    const conectados = contarJugadoresConectados(sala);
+    if (sala.respuestasRonda.length > 0 && sala.respuestasRonda.length >= conectados) {
+      finalizarRonda(codigoSala);
+    }
+    const votantesEsperados = Math.max(conectados - 1, 1);
+    if (Object.keys(sala.votosJuicio).length > 0 && Object.keys(sala.votosJuicio).length >= votantesEsperados) {
+      finalizarJuicio(codigoSala);
+    }
+  }
+
   socket.on('enviar_respuesta', (data) => {
     try {
       const sala = salas[data.codigoSala];
       if (!sala) return;
-
-      // Evita duplicados si el evento llega dos veces (doble click, reintento de red)
       if (sala.respuestasRonda.some(r => r.idJugador === socket.id)) return;
 
       sala.respuestasRonda.push({
@@ -312,9 +441,7 @@ io.on('connection', (socket) => {
           prediccion: data.prediccion
       });
 
-      if (sala.respuestasRonda.length >= sala.jugadores.length) {
-          finalizarRonda(data.codigoSala);
-      }
+      intentarCerrarRondaSiCorresponde(data.codigoSala);
     } catch (err) {
       console.error('Error en enviar_respuesta:', err);
       io.to(data.codigoSala).emit('error_conexion', { mensaje: 'Hubo un error procesando la respuesta. Reintentando...' });
@@ -332,6 +459,8 @@ io.on('connection', (socket) => {
   function finalizarJuicio(codigoSala) {
     const sala = salas[codigoSala];
     if (!sala) return;
+
+    if (sala.timerJuicio) { clearTimeout(sala.timerJuicio); sala.timerJuicio = null; }
 
     let votosCulpable = 0;
     let votosInocente = 0;
@@ -371,53 +500,73 @@ io.on('connection', (socket) => {
     sala.idAcusadoActual = data.idAcusado;
     sala.votosJuicio[socket.id] = data.voto;
 
-    const votantesEsperados = Math.max(sala.jugadores.length - 1, 1);
-    if (Object.keys(sala.votosJuicio).length >= votantesEsperados) {
+    if (!sala.timerJuicio) {
+      sala.timerJuicio = setTimeout(() => {
+        console.log(`[${data.codigoSala}] Timer de respaldo del tribunal disparado`);
         finalizarJuicio(data.codigoSala);
+      }, TIEMPO_JUICIO_MS);
     }
+
+    intentarCerrarRondaSiCorresponde(data.codigoSala);
   });
 
   socket.on('finalizar_juego', (data) => {
     const sala = salas[data.codigoSala];
     if (!sala) return;
-    limpiarTimerPregunta(sala);
-    asignarMedallas(sala.jugadores, sala.preguntas.length);
-    io.to(data.codigoSala).emit('juego_terminado', { jugadores: sala.jugadores, testActivo: sala.testActivo });
+    if (!esAnfitrionValido(sala, socket.id)) return;
+    limpiarTimers(sala);
+    asignarMedallas(sala.jugadores, sala.preguntas.length, sala.totalFuegoCruzado);
+    io.to(data.codigoSala).emit('juego_terminado', {
+      jugadores: sala.jugadores,
+      testActivo: sala.testActivo,
+      parteInicial: sala.parteInicial,
+      extendida: sala.extendida
+    });
   });
+
+  function removerJugadorDefinitivamente(codigo, idJugador) {
+    const sala = salas[codigo];
+    if (!sala) return;
+    const idx = sala.jugadores.findIndex(j => j.id === idJugador);
+    if (idx === -1) return; // ya se reconectó, o ya fue removido
+
+    const eraAnfitrion = sala.jugadores[idx].esAnfitrion;
+    sala.jugadores.splice(idx, 1);
+    delete sala.timersDesconexion[idJugador];
+
+    if (sala.jugadores.length === 0) {
+      limpiarTimers(sala);
+      delete salas[codigo];
+      return;
+    }
+
+    if (eraAnfitrion) sala.jugadores[0].esAnfitrion = true;
+
+    io.to(codigo).emit('actualizar_jugadores', { jugadores: sala.jugadores });
+    console.log(`[${codigo}] jugador removido definitivamente (no volvió a conectarse)`);
+
+    intentarCerrarRondaSiCorresponde(codigo);
+  }
 
   socket.on('disconnect', () => {
     for (const codigo in salas) {
       const sala = salas[codigo];
-      const idx = sala.jugadores.findIndex(j => j.id === socket.id);
-      if (idx === -1) continue;
+      const jugador = sala.jugadores.find(j => j.id === socket.id);
+      if (!jugador) continue;
 
-      const eraAnfitrion = sala.jugadores[idx].esAnfitrion;
-      sala.jugadores.splice(idx, 1);
-
-      if (sala.jugadores.length === 0) {
-        limpiarTimerPregunta(sala);
-        delete salas[codigo];
-        continue;
-      }
-
-      // Si se fue el anfitrión, el rol pasa a quien sigue en la lista para
-      // que la sala no quede sin nadie que pueda avanzar el juego.
-      if (eraAnfitrion) {
-        sala.jugadores[0].esAnfitrion = true;
-      }
-
+      // No lo sacamos de la sala todavía: le damos un período de gracia
+      // para reconectarse (celular que se queda sin señal, recarga de
+      // página, etc). Mientras tanto queda marcado como desconectado.
+      jugador.conectado = false;
       io.to(codigo).emit('actualizar_jugadores', { jugadores: sala.jugadores });
+      console.log(`[${codigo}] ${jugador.nombre} se desconectó, esperando reconexión (${TIEMPO_GRACIA_DESCONEXION_MS / 1000}s)...`);
 
-      // Si su respuesta era lo único que faltaba para cerrar la ronda, o su
-      // voto era lo único que faltaba en el tribunal, cerrar ahora en vez de
-      // esperar al timer de respaldo.
-      if (sala.respuestasRonda.length > 0 && sala.respuestasRonda.length >= sala.jugadores.length) {
-        finalizarRonda(codigo);
-      }
-      const votantesEsperados = Math.max(sala.jugadores.length - 1, 1);
-      if (Object.keys(sala.votosJuicio).length > 0 && Object.keys(sala.votosJuicio).length >= votantesEsperados) {
-        finalizarJuicio(codigo);
-      }
+      const idDesconectado = jugador.id;
+      sala.timersDesconexion[idDesconectado] = setTimeout(() => {
+        removerJugadorDefinitivamente(codigo, idDesconectado);
+      }, TIEMPO_GRACIA_DESCONEXION_MS);
+
+      intentarCerrarRondaSiCorresponde(codigo);
     }
   });
 });
