@@ -3,9 +3,7 @@ const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
 
-// FIX: no existe un tests.json combinado — los 4 tests viven en archivos
-// separados. Los requerimos por su nombre real y los juntamos en un array,
-// que es exactamente lo que el resto del archivo espera de "TESTS".
+// Los 4 tests viven en archivos separados, no hay un tests.json combinado.
 const TESTS = [
   require('./test_a_dictador.json'),
   require('./test_b_falso_zen.json'),
@@ -125,6 +123,8 @@ io.on('connection', (socket) => {
       cuestionamientos: {},
       votosJuicio: {},
       idAcusadoActual: null,
+      rondaFinalizada: false,
+      juicioFinalizado: false,
       timerPregunta: null,
       timerJuicio: null,
       timersDesconexion: {}
@@ -223,6 +223,8 @@ io.on('connection', (socket) => {
     sala.cuestionamientos = {};
     sala.votosJuicio = {};
     sala.idAcusadoActual = null;
+    sala.rondaFinalizada = false;
+    sala.juicioFinalizado = false;
 
     if (sala.preguntaActualIndice >= sala.preguntas.length) {
        asignarMedallas(sala.jugadores, sala.preguntas.length, sala.totalFuegoCruzado);
@@ -333,45 +335,63 @@ io.on('connection', (socket) => {
     enviarNuevaPregunta(data.codigoSala);
   });
 
+  // Procesa la ronda de la pregunta actual UNA sola vez (protegido con
+  // "rondaFinalizada" — ver nota en intentarCerrarRondaSiCorresponde).
   function finalizarRonda(codigoSala) {
     const sala = salas[codigoSala];
     if (!sala) return;
 
-    limpiarTimers(sala);
-
-    let revelacion = [];
     let preguntaActual = sala.preguntas[sala.preguntaActualIndice];
     if (!preguntaActual) return;
 
+    if (sala.rondaFinalizada) return;
+    sala.rondaFinalizada = true;
+
+    limpiarTimers(sala);
+
+    let revelacion = [];
+    let escrachadoFC = null;
+
     if (preguntaActual.es_fuego_cruzado) {
         let conteoVotos = {};
-        sala.respuestasRonda.forEach(res => {
-            conteoVotos[res.idOpcion] = (conteoVotos[res.idOpcion] || 0) + 1;
-            let votante = sala.jugadores.find(j => j.id === res.idJugador);
-            let votado = sala.jugadores.find(j => j.id === res.idOpcion);
-            if (!votante) return;
+        let indiceUltimoVoto = {}; // idOpcion -> índice (orden de llegada) de su último voto recibido
 
-            revelacion.push({
-                idJugador: votante.id,
-                nombreJugador: votante.nombre,
-                avatar: votante.avatar,
-                opcionElegida: { texto: votado ? `Votó a: ${votado.avatar} ${votado.nombre}` : 'Alguien' },
-                esTibia: false
-            });
+        sala.respuestasRonda.forEach((res, indice) => {
+            conteoVotos[res.idOpcion] = (conteoVotos[res.idOpcion] || 0) + 1;
+            indiceUltimoVoto[res.idOpcion] = indice;
         });
 
         let maxVotos = 0;
         Object.values(conteoVotos).forEach(v => { if (v > maxVotos) maxVotos = v; });
 
+        // Desempate: entre los que llegaron al máximo de votos, "pierde" el
+        // que haya alcanzado ese número primero en el orden de llegada de
+        // las respuestas (el grupo lo señaló más rápido).
+        let idEscrachado = null;
+        let mejorIndice = Infinity;
+        let candidatosEnElMaximo = 0;
         Object.keys(conteoVotos).forEach(idVotado => {
             if (conteoVotos[idVotado] === maxVotos) {
-                let victima = sala.jugadores.find(j => j.id === idVotado);
-                if (victima) {
-                  victima.puntos += 10;
-                  victima.estadisticas.escrachadoFC++;
+                candidatosEnElMaximo++;
+                if (indiceUltimoVoto[idVotado] < mejorIndice) {
+                    mejorIndice = indiceUltimoVoto[idVotado];
+                    idEscrachado = idVotado;
                 }
             }
         });
+
+        let victima = sala.jugadores.find(j => j.id === idEscrachado);
+        if (victima) {
+            victima.puntos += 10;
+            victima.estadisticas.escrachadoFC++;
+            escrachadoFC = {
+                idJugador: victima.id,
+                nombre: victima.nombre,
+                avatar: victima.avatar,
+                votos: maxVotos,
+                huboEmpate: candidatosEnElMaximo > 1
+            };
+        }
 
     } else {
         let totalTibios = 0;
@@ -422,18 +442,18 @@ io.on('connection', (socket) => {
         });
     }
 
-    io.to(codigoSala).emit('mostrar_revelacion', { revelacion, jugadores: sala.jugadores });
+    io.to(codigoSala).emit('mostrar_revelacion', { revelacion, jugadores: sala.jugadores, escrachadoFC });
   }
 
   function intentarCerrarRondaSiCorresponde(codigoSala) {
     const sala = salas[codigoSala];
     if (!sala) return;
     const conectados = contarJugadoresConectados(sala);
-    if (sala.respuestasRonda.length > 0 && sala.respuestasRonda.length >= conectados) {
+    if (!sala.rondaFinalizada && sala.respuestasRonda.length > 0 && sala.respuestasRonda.length >= conectados) {
       finalizarRonda(codigoSala);
     }
     const votantesEsperados = Math.max(conectados - 1, 1);
-    if (Object.keys(sala.votosJuicio).length > 0 && Object.keys(sala.votosJuicio).length >= votantesEsperados) {
+    if (!sala.juicioFinalizado && Object.keys(sala.votosJuicio).length > 0 && Object.keys(sala.votosJuicio).length >= votantesEsperados) {
       finalizarJuicio(codigoSala);
     }
   }
@@ -468,6 +488,9 @@ io.on('connection', (socket) => {
   function finalizarJuicio(codigoSala) {
     const sala = salas[codigoSala];
     if (!sala) return;
+
+    if (sala.juicioFinalizado) return;
+    sala.juicioFinalizado = true;
 
     if (sala.timerJuicio) { clearTimeout(sala.timerJuicio); sala.timerJuicio = null; }
 
