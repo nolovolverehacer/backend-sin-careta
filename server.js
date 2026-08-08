@@ -3,7 +3,16 @@ const http = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
 
-const TESTS = require('./tests.json');
+// FIX: no existe un tests.json combinado — los 4 tests viven en archivos
+// separados. Los requerimos por su nombre real y los juntamos en un array,
+// que es exactamente lo que el resto del archivo espera de "TESTS".
+const TESTS = [
+  require('./test_a_dictador.json'),
+  require('./test_b_falso_zen.json'),
+  require('./test_c_buda_punal.json'),
+  require('./test_d_barrio.json')
+];
+
 const FUEGO_CRUZADO = require('./fuego_cruzado.json');
 
 const app = express();
